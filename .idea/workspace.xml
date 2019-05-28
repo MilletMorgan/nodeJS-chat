@@ -31,7 +31,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -60,10 +64,11 @@
       <list>
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="714" />
     <option name="height" value="900" />
   </component>
@@ -125,16 +130,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559040133349</updated>
-      <workItem from="1559040134504" duration="4542000" />
+      <workItem from="1559040134504" duration="4835000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4542000" />
+    <option name="totallyTimeSpent" value="4835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="791" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
@@ -178,7 +182,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
