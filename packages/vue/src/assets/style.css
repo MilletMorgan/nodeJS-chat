@@ -1,0 +1,19 @@
+.auth {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 1vh;
+}
+
+.signup {
+    background: #007bff;
+    color: #FFF;
+    border-radius: 0 1vh 1vh 0;
+}
+
+.form-signup {
+    color: #FFFFFF!important;
+}
+
+.element {
+    padding: 5vh;
+}
+
