@@ -2,13 +2,13 @@
         <div class="col-md-6">
             <div class="element">
                 <h2>Login</h2>
-                <br>
+                <hr>
                 <form class="login" @submit.prevent="login">
                     <label for="email">Email</label>
                     <input class="form-control" required v-model="email" type="email" placeholder="email" name="email" id="email"/>
                     <br>
                     <label for="password">Password</label>
-                    <input class="form-control" required v-model="password" type="password" placeholder="Password" name="password" id="password"/>
+                    <input class="form-control" required v-model="password" type="password" placeholder="password" name="password" id="password"/>
                     <hr/>
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>
@@ -49,7 +49,7 @@
                 let password = this.password;
                 this.$store
                     .dispatch("login", { email, password })
-                    .then(() => this.$router.push("/resources"))
+                    .then(() => this.$router.push("/profile"))
                     .catch(err => console.log(err))
             }
         }

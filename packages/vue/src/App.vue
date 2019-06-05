@@ -1,66 +1,54 @@
 <template>
     <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png">
-        <!-- <HelloWorld msg="Welcome to Your Vue.js App Morgan"/> -->
-        <h1>Single Page Application of instant chat</h1>
-        <h5>NodeJS - VueJS</h5>
-        <br><br><br>
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <router-link to="/">Home</router-link>
-            </li>
-            <li class="nav-item">
-                <span v-if="isLoggedIn"> | You are successfully connected -  <a @click="logout">Logout</a></span>
-
-                <span v-else>
-                    | <router-link to="/login">Login</router-link>
-                    | <router-link to="/register">Register</router-link>
+        <nav class="navbar fixed-top navbar-light bg-primary justify-content-center text-light">
+            <a class="navbar-brand text-light" href="#">
+                <img alt="Vue logo" src="./assets/logo.png" width="30" height="30" class="d-inline-block align-top">
+                SPA of instant chat | NodeJS - VueJS
+            </a>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <router-link to="/" class="btn btn-secondary">Home</router-link>
+                </li>
+                <li class="nav-item">
+                <span v-if="isLoggedIn || true">
+                    <router-link class="btn btn-secondary" to="/chat">Chat</router-link>
+                    You are successfully connected -
+                    <router-link class="btn btn-secondary" to="/profile">Profile</router-link>
+                    <a class="btn btn-warning" @click="logout">Logout</a>
                 </span>
-            </li>
-        </ul>
 
-        <hr>
+                    <!--
+                    <span v-else>
+                        <router-link to="/login" class="btn btn-outline-primary">Login</router-link>
+                        <router-link to="/register" class="btn btn-outline-primary">Register</router-link>
+                    </span>
+                    -->
+                </li>
+            </ul>
+        </nav>
 
-        <h3>Welcome to the application, please login or register for start</h3>
-
-
-        <!-- <router-view/> -->
-
-        <div class="container">
-            <div class="row auth">
-
-                <Signin/>
-                <Signup/>
-
-            </div>
-        </div>
-
+        <router-view/>
     </div>
 </template>
 
 <script>
-    //import HelloWorld from './components/HelloWorld.vue'
-    import Signup from './components/auth/Register.vue';
-    import Signin from './components/auth/Login.vue';
 
     export default {
         computed: {
-            isLoggedIn: function() {
+            isLoggedIn: function () {
                 return this.$store.getters.isLoggedIn;
             }
         },
         methods: {
-            logout: function() {
+            logout: function () {
                 this.$store.dispatch("logout").then(() => {
-                    this.$router.push("/login");
+                    this.$router.push("/");
                 });
+            },
+            profile: function () {
+                this.$router.push(("/profile"));
             }
-        },
-        components: {
-            //HelloWorld,
-            Signup,
-            Signin
-        },
+        }
     };
 </script>
 

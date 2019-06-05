@@ -8075,6 +8075,13 @@ node-ipc@^9.1.1:
     js-message "1.0.5"
     js-queue "2.0.0"
 
+node-json-db@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/node-json-db/-/node-json-db-0.11.0.tgz#b62dfb9e43619a798ef14edb82002db55c27ef4b"
+  integrity sha512-QsP8/qJmVPhC2qnxO3O4NIsAd/FDVnO/eNtQvATkWjhPZe7sKeANGcELHk2vnJt6qXHmvolLP1ylaFjSvp9hcw==
+  dependencies:
+    mkdirp "0.5.x"
+
 node-libs-browser@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/node-libs-browser/-/node-libs-browser-2.2.0.tgz#c72f60d9d46de08a940dedbb25f3ffa2f9bbaa77"
@@ -10584,7 +10591,7 @@ socket.io-adapter@~1.1.0:
   resolved "https://registry.yarnpkg.com/socket.io-adapter/-/socket.io-adapter-1.1.1.tgz#2a805e8a14d6372124dd9159ad4502f8cb07f06b"
   integrity sha1-KoBeihTWNyEk3ZFZrUUC+MsH8Gs=
 
-socket.io-client@2.2.0, socket.io-client@^2.1.0:
+socket.io-client@2.2.0, socket.io-client@^2.1.0, socket.io-client@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/socket.io-client/-/socket.io-client-2.2.0.tgz#84e73ee3c43d5020ccc1a258faeeb9aec2723af7"
   integrity sha512-56ZrkTDbdTLmBIyfFYesgOxsjcLnwAKoN4CiPyTVkMQj3zTUh0QAx3GbvIvLpFEOvQWu92yyWICxB0u7wkVbYA==
@@ -11836,6 +11843,11 @@ vm-browserify@0.0.4:
   integrity sha1-XX6kW7755Kb/ZflUOOCofDV9WnM=
   dependencies:
     indexof "0.0.1"
+
+vue-axios@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-2.1.4.tgz#a9d298f7e876f9a87feb336b37adcbce34ff9f9f"
+  integrity sha512-DS8Q+WFT3i7nS0aZ/NMmTPf2yhbtlXhj4QEZmY69au/BshsGzGjC6dXaniZaPQlErP3J3Sv1HtQ4RVrXaUTkxA==
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"

@@ -12,7 +12,7 @@ class Db {
                 name text,
                 email text UNIQUE,
                 password text)
-        `
+        `;
         return this.db.run(sql);
     }
     selectByEmail(email, callback) {
@@ -20,7 +20,16 @@ class Db {
             `SELECT * FROM userAuth WHERE email = ?`,
             [email], function (err, row) {
                 callback(err, row)
-            })
+            }
+        )
+    }
+    selectUserById(id, callback) {
+        return this.db.get(
+            `SELECT * FROM userAuth WHERE id = ?`,
+            [id], function (err, row) {
+                callback(err, row)
+            }
+        )
     }
     insert(user, callback) {
         return this.db.run(
@@ -30,4 +39,4 @@ class Db {
             })
     }
 }
-module.exports = Db
+module.exports = Db;

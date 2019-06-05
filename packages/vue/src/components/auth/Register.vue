@@ -1,27 +1,33 @@
 <template>
         <div class="col-md-6 signup">
             <div class="element">
+                <span class="bg-success">
+                    {{ success }}
+                </span>
+                <span class="bg-warning">
+                    {{ error }}
+                </span>
                 <h2>Register</h2>
-                <br>
+                <hr>
                 <form @submit.prevent="register">
                     <label for="name">Name</label>
                     <div>
-                        <input class="form-control" id="name" type="text" v-model="name" required autofocus>
+                        <input class="form-control" id="name" type="text" v-model="name" required autofocus placeholder="name">
                     </div>
                     <br>
-                    <label for="email" >E-Mail Address</label>
+                    <label for="email" >Email</label>
                     <div>
-                        <input class="form-control" id="email" type="email" v-model="email" required>
+                        <input class="form-control" id="email" type="email" v-model="email" required placeholder="email">
                     </div>
                     <br>
                     <label for="password">Password</label>
                     <div>
-                        <input class="form-control" id="password" type="password" v-model="password" required>
+                        <input class="form-control" id="password" type="password" v-model="password" required placeholder="password">
                     </div>
                     <br>
                     <label for="password-confirm">Confirm Password</label>
                     <div>
-                        <input class="form-control" id="password-confirm" type="password" v-model="password_confirmation" required>
+                        <input class="form-control" id="password-confirm" type="password" v-model="password_confirmation" required placeholder="password">
                     </div>
                     <hr>
                     <div>
@@ -33,29 +39,38 @@
 </template>
 
 <script>
+    import io from 'socket.io-client';
+
     export default {
         data() {
             return {
-                name: "",
-                email: "",
-                password: "",
-                password_confirmation: "",
+                name: null,
+                email: null,
+                password: null,
+                password_confirmation: null,
+                socket: null,
+                success: null,
+                error: null
             };
         },
         methods: {
-            register: function() {
-                let data = {
-                    name: this.name,
-                    email: this.email,
-                    password: this.password
-                };
-                this.$store
-                    .dispatch("register", data)
-                    .then(() => this.$router.push("/"))
-                    .catch(err => console.log(err));
+            register() {
+                this.socket = io('/', {path: '/api/socket'});
+
+                if (this.password === this.password_confirmation) {
+                    this.socket.emit('REGISTER', {
+                        name: this.name,
+                        email: this.email,
+                        password: this.password
+                    });
+
+                    this.success = 'Vous êtes inscrit avec succès !';
+                } else {
+                    this.error = 'Les mots de passes ne correspondent pas !';
+                }
             }
         }
-    };
+    }
     /*
     import axios from 'axios';
 

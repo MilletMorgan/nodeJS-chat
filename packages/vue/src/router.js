@@ -4,8 +4,8 @@ import store from './store.js'
 import Home from './views/Home.vue'
 import Login from './components/auth/Login.vue'
 import Register from './components/auth/Register.vue'
-import Resource from './components/resources/Resources.vue'
-import Hello from './components/Hello.vue'
+import Chat from './views/Chat.vue'
+import Profile from './views/profile.vue'
 
 Vue.use(Router);
 
@@ -28,31 +28,34 @@ let router = new Router ({
             component: Register
         },
         {
-            path: '/resources',
-            name: 'resources',
-            component: Resource,
+            path: '/profile',
+            name: 'profile',
+            component: Profile,
             meta: {
                 requiresAuth: true
             }
         },
         {
-            path: '/hello',
-            name: 'hello',
-            component: Hello
+            path: '/chat',
+            name: 'chat',
+            component: Chat,
+            meta: {
+                requiresAuth: true
+            }
         }
     ]
 });
-
+/*
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
         if (store.getters.isLoggedIn) {
             next();
             return
         }
-        next('/login')
+        next('/')
     } else {
         next()
     }
-});
+});*/
 
 export default router
