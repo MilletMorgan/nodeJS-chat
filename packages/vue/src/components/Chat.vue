@@ -1,25 +1,27 @@
 <template>
-    <div class="card mt-3 container chat">
+    <div class="card container chat">
         <div class="header bg-primary text-light">
-            <h2>Chat Group</h2>
             <h3><span>@{{ this.user }}</span></h3>
+            <button v-if="socket" type="button" class="btn btn-outline-warning" @click="disconnect">Se déconnecter</button>
         </div>
         <div class="content" id="content">
             <div v-if="socket">
-                <div class="data-target" id="box-scroll">
-                    <div class="messages" id="target-message" v-for="({ author, content, hour, minute }, index) in messages" :key="index">
-                        <p>
-                            <span class="font-weight-bold">{{ author }}</span>
-                            <span class="message-hour"> - {{ hour }}h <span v-if="minute < 10">0</span>{{ minute }}</span>
+                <div class="data-target" id="box-scroll" v-chat-scroll>
+                    <div class="messages" id="target-message" v-for="({ author, content, date, month, year, hour, minute }, index) in messages" :key="index">
+                        <hr>
+                            <span class="font-weight-bold">😀 {{ author }}</span>
+                            <span class="message-hour">
+                                <span v-if="( date !== dateToday )"> | Le </span>
+                                <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
+                                {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
+                            </span>
                             <br>
                             {{ content }}
-                            <br><hr/>
-                        </p>
+                        <br>
                     </div>
-                    <span v-if="currentContent">{{ author }} écrit...</span>
+                    <span v-if="currentContent">{{ `${this.user}  écrit...` }}</span>
                 </div>
             </div>
-
             <div v-else>
                 <p>Merci de vous connecter.</p>
             </div>
@@ -30,15 +32,14 @@
                     <label for="user">Nom d'utilisateur :</label>
                     <input type="text" v-model="user" class="form-control" id="user">
                 </div>
-                <button type="submit" class="btn btn-success">Se connecter</button>
+                <button type="submit" class="btn btn-outline-success">Se connecter</button>
             </form>
-            <form @submit.prevent="sendMessage" v-else class="">
+            <form @submit.prevent="sendMessage" v-else>
                 <div class="form-group pb-3">
                     <label for="message">Message</label>
                     <input type="text" v-model="currentContent" class="form-control" id="message">
                 </div>
-                <button type="submit" class="btn btn-secondary">Envoyer</button>
-                <button type="button" class="btn btn-warning" @click="disconnect">Se déconnecter</button>
+                <button type="submit" class="btn btn-outline-success">Envoyer</button>
             </form>
         </div>
     </div>
@@ -46,14 +47,22 @@
 
 <script>
     import io from 'socket.io-client';
+    import Vue from 'vue';
+    import VueChatScroll from 'vue-chat-scroll';
+    Vue.use(VueChatScroll);
 
     export default {
         data() {
             return {
-                user: null,
-                currentContent: null,
                 messages: [],
                 users: [],
+                user: null,
+                currentContent: null,
+                author: null,
+                dateToday: null,
+                date: null,
+                month: null,
+                year: null,
                 hour: null,
                 minute: null,
                 socket: null
@@ -66,8 +75,11 @@
                 this.socket.emit('SEND_MESSAGE', {
                     author: this.user,
                     content: this.currentContent,
+                    date: new Date().getDate(),
+                    month: new Date().getMonth(),
+                    year: new Date().getFullYear(),
                     hour: new Date().getHours(),
-                    minute: new Date().getMinutes(),
+                    minute: new Date().getMinutes()
                 });
 
                 this.currentContent = '';
@@ -94,6 +106,8 @@
                 this.socket.on('MESSAGES', (data) => {
                     this.messages = data;
                 });
+
+                this.dateToday = new Date().getDate();
             },
             disconnect() {
                 this.socket.close();

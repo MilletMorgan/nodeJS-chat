@@ -9,44 +9,14 @@ const axios = require('axios');
 const fs = require('fs');
 
 let db;
-let dbUsers;
 
 const router = express.Router();
-
-passport.serializeUser((user, done) => {
-    done(null, user.id);
-});
-
-passport.deserializeUser((id, done) => {
-    axios.get(`http://localhost:5000/users/${id}`)
-        .then(res => done(null, res.data))
-        .catch(error => done(error, false));
-});
-
 const app = express();
-
-//const server = http.createServer(app);
-
-//app.set('view engine', 'ejs');
 
 app.use(express.json());
 
-app.use(session({
-    genid: (req) => {
-        return uuid();
-    },
-    store: new FileStore(),
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: true
-}));
-app.use(passport.initialize());
-app.use(passport.session());
-
 router.get('/', (req, res) => {
-    //res.send(`You got home page!\n`);
     const data = "Hello";
-    //res.render(path.join(__dirname, './views/index.ejs'), {data: data});
 });
 
 router.post('/user', (req, res) => {
@@ -126,7 +96,6 @@ let port = process.env.PORT || 3000;
 
 let server = app.listen(port, function () {
     db = fs.existsSync('./db.json') ? JSON.parse(fs.readFileSync('./db.json').toString()) : {messages: []};
-    dbUsers = fs.existsSync('./dbUsers.json') ? JSON.parse(fs.readFileSync('./dbUsers.json').toString()) : {users: []};
     console.log('Server listening on port ' + port);
 });
 
@@ -136,34 +105,35 @@ let server = app.listen(port, function () {
 const io = require('socket.io')(server, {path: '/api/socket'});
 
 io.on('connection', socket => {
-
-
     console.log(socket.id);
 
     socket.emit('MESSAGES', db.messages);
-
-    socket.on('SEND_MESSAGE', ({author, content, hour, minute}) => {
-        io.emit('MESSAGE', {author, content, hour, minute});
-        db.messages.push({author, content, hour, minute});
-        fs.writeFileSync('./db.json', JSON.stringify(db, null, 2));
-    });
-
     socket.emit('USERS', db.users);
+    socket.emit('CONNECTION', db.users[0]);
 
-    socket.on('CONNECT', ({ author }) => {
-        io.emit('USER', { author });
-
-        //if ({ author } !== db.users.hasOwnProperty({author})) {
-            db.users.push({ author });
-            fs.writeFileSync('./db.json', JSON.stringify(db, null, 2));
-        //}
+    socket.on('SEND_MESSAGE', ({author, content, date, month, year, hour, minute}) => {
+        io.emit('MESSAGE', {author, content, date, month, year, hour, minute});
+        db.messages.push({author, content, date, month, year, hour, minute});
+        fs.writeFileSync('./db.json', JSON.stringify(db, null, 2));
     });
 
     socket.on('REGISTER', ({ name, email, password }) => {
         io.emit('USER', { name, email, password});
         db.users.push({ name, email, password });
         fs.writeFileSync('./db.json', JSON.stringify(db, null, 2));
-    })
+    });
+
+    /*
+    socket.on('CONNECT', ({ author }) => {
+        io.emit('USER', { author });
+
+        //if ({ author } !== db.users.hasOwnProperty({author})) {
+        db.users.push({ author });
+        fs.writeFileSync('./db.json', JSON.stringify(db, null, 2));
+        //}
+    });
+
+     */
 });
 
 

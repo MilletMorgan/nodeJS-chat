@@ -3,101 +3,73 @@
     {
       "author": "Morgan",
       "content": "Bonjour",
-      "hour": 13,
+      "date": 4,
+      "month": 5,
+      "year": 2019,
+      "hour": 10,
       "minute": 57
     },
     {
-      "author": "Morgan",
+      "author": "Mathieu",
       "content": "Salut",
-      "hour": 13,
-      "minute": 57
-    },
-    {
-      "author": "Morgan",
-      "content": "bonjour",
-      "hour": 13,
-      "minute": 58
-    },
-    {
-      "author": "Morgan",
-      "content": "test",
-      "hour": 13,
+      "date": 5,
+      "month": 5,
+      "year": 2019,
+      "hour": 10,
       "minute": 59
     },
     {
       "author": "Morgan",
-      "content": "blbla",
-      "hour": 14,
-      "minute": 0
-    },
-    {
-      "author": "Mathieu",
-      "content": "Hola",
-      "hour": 14,
-      "minute": 1
-    },
-    {
-      "author": "Mathieu",
-      "content": "a",
-      "hour": 14,
-      "minute": 1
-    },
-    {
-      "author": "Mathieu",
-      "content": "sq",
-      "hour": 14,
-      "minute": 6
-    },
-    {
-      "author": "Mathieu",
-      "content": "blbla",
-      "hour": 14,
-      "minute": 9
-    },
-    {
-      "author": "Mathieu",
-      "content": "ezf",
-      "hour": 14,
-      "minute": 9
-    },
-    {
-      "author": "Morgan",
-      "content": "Morgan",
-      "hour": 14,
-      "minute": 29
+      "content": "Slt",
+      "date": 6,
+      "month": 5,
+      "year": 2019,
+      "hour": 10,
+      "minute": 57
     },
     {
       "author": "Morgan",
       "content": "Bonsoir",
-      "hour": 14,
-      "minute": 48
+      "date": 6,
+      "month": 5,
+      "year": 2019,
+      "hour": 10,
+      "minute": 58
     },
     {
       "author": "Morgan",
-      "content": "dsq",
-      "hour": 14,
-      "minute": 50
+      "content": "Salut",
+      "date": 6,
+      "month": 5,
+      "year": 2019,
+      "hour": 11,
+      "minute": 10
     }
   ],
   "users": [
     {
-      "name": "Hasad Savage",
-      "email": "zijomy@mailinator.com",
+      "name": "Morgan Millet",
+      "email": "millet.morgan5@gmail.com",
+      "password": "root"
+    },
+    {
+      "name": "Yolanda Valdez",
+      "email": "jacibipavi@mailinator.com",
       "password": "Pa$$w0rd!"
     },
     {
-      "name": "Wendy Hayes",
-      "email": "fasicasoxi@mailinator.com",
+      "name": "Camden Donaldson",
+      "email": "kofularic@mailinator.net",
       "password": "Pa$$w0rd!"
     },
     {
-      "name": "Hadassah Francis",
-      "email": "zakabexy@mailinator.com",
+      "name": "Baxter Keller",
+      "email": "deqahyne@mailinator.net",
       "password": "Pa$$w0rd!"
     },
     {
-      "name": "Celeste Ochoa",
-      "email": "kyluze@mailinator.net",
+      "name": "Rashad Hood",
+      "email": "viwezefi@mailinator.com",
       "password": "Pa$$w0rd!"
     }
   ]

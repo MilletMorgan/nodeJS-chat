@@ -1,22 +1,26 @@
 body {
-    margin-top: 15vh;
+    margin-top: 10vh;
+}
+
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
 }
 
 .footer, .header {
-    padding: 5vh;
+    padding: 2vh;
 }
 
 .card {
     /*border: 1px solid rgba(0, 0, 0, 0.1);*/
+    border: none;
     border-radius: 1vh;
     box-shadow: 0 20px 30px rgba(0,0,0,0.2);
     margin-bottom: 10vh;
     margin-top: 10vh;
     flex-direction: inherit;
-}
-
-.content {
-    min-height: 25vh;
 }
 
 .padding {
@@ -55,10 +59,16 @@ body {
     position: absolute;
 }
 
+.content {
+    min-height: 58vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
 .data-target {
     overflow-y:scroll;
     position:relative;
-    height: 47vh;
+    height: 58vh;
     text-align: left;
 }
 
@@ -84,7 +94,6 @@ body {
     font-size: 0.7em;
 }
 
-div#content {
-    margin-left: 2vh;
-    margin-right: 2vh;
+.btn-logout {
+    cursor: pointer;
 }

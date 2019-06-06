@@ -1,18 +1,12 @@
 <template>
-        <div class="col-md-6 signup">
+        <div class="col-md-6 signup bg-primary">
             <div class="element">
-                <span class="bg-success">
-                    {{ success }}
-                </span>
-                <span class="bg-warning">
-                    {{ error }}
-                </span>
-                <h2>Register</h2>
+                <h2>Inscription</h2>
                 <hr>
                 <form @submit.prevent="register">
-                    <label for="name">Name</label>
+                    <label for="name">Nom</label>
                     <div>
-                        <input class="form-control" id="name" type="text" v-model="name" required autofocus placeholder="name">
+                        <input class="form-control" id="name" type="text" v-model="name" required autofocus placeholder="nom">
                     </div>
                     <br>
                     <label for="email" >Email</label>
@@ -20,20 +14,29 @@
                         <input class="form-control" id="email" type="email" v-model="email" required placeholder="email">
                     </div>
                     <br>
-                    <label for="password">Password</label>
+                    <label for="password">Mot de passe</label>
                     <div>
-                        <input class="form-control" id="password" type="password" v-model="password" required placeholder="password">
+                        <input class="form-control" id="password" type="password" v-model="password" required placeholder="mot de passe">
                     </div>
                     <br>
-                    <label for="password-confirm">Confirm Password</label>
+                    <label for="password-confirm">Confirmer votre mot de passe</label>
                     <div>
-                        <input class="form-control" id="password-confirm" type="password" v-model="password_confirmation" required placeholder="password">
+                        <input class="form-control" id="password-confirm" type="password" v-model="password_confirmation" required placeholder="mot de passe">
                     </div>
                     <hr>
                     <div>
-                        <button type="submit" class="btn btn-light">Register</button>
+                        <button type="submit" class="btn btn-outline-success">Inscription</button>
                     </div>
                 </form>
+
+                <br>
+
+                <div class="alert alert-success" v-if="success">
+                    {{ success }}
+                </div>
+                <div class="alert alert-warning" v-if="error">
+                    {{ error }}
+                </div>
             </div>
     </div>
 </template>
@@ -71,57 +74,6 @@
             }
         }
     }
-    /*
-    import axios from 'axios';
-
-    export default {
-        name: "Signup",
-        data: function () {
-            return {
-                errors: [],
-                email: null,
-                password: null,
-                repeatPassword: null
-            };
-        },
-        methods: {
-            checkForm: function () {
-                this.errors = [];
-
-                if (!this.email) {
-                    this.errors.push('Email required');
-                }
-
-                if (!this.password) {
-                    this.errors.push('Password required');
-                }
-
-                if (!this.repeatPassword) {
-                    this.errors.push('Password repeat required');
-                }
-
-                if (this.password !== this.repeatPassword) {
-                    this.errors.push('The passwords do not match.');
-                }
-                if (this.errors.length) {
-                    return false;
-                }
-
-                axios.post(`http://localhost:5000/users`, {
-                    email: this.email,
-                    password: this.password
-                })
-                    .then(function (response) {
-                        console.log(response);
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
-            }
-        },
-    };
-
-     */
 </script>
 
 <style scoped>

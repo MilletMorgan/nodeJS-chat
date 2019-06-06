@@ -7,14 +7,24 @@
             </a>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <router-link to="/" class="btn btn-secondary">Home</router-link>
+                    <router-link to="/" class="btn btn-outline-success">Accueil</router-link>
                 </li>
                 <li class="nav-item">
                 <span v-if="isLoggedIn || true">
-                    <router-link class="btn btn-secondary" to="/chat">Chat</router-link>
-                    You are successfully connected -
-                    <router-link class="btn btn-secondary" to="/profile">Profile</router-link>
-                    <a class="btn btn-warning" @click="logout">Logout</a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <router-link class="btn btn-outline-success" to="/chat">Chat</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="btn btn-outline-success" to="/profile">Profile</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="btn btn-outline-success" to="/admin">Admin</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-warning btn-logout" @click="logout">Deconnexion</button>
+                        </li>
+                    </ul>
                 </span>
 
                     <!--
@@ -53,12 +63,5 @@
 </script>
 
 <style>
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
+
 </style>

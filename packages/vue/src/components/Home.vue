@@ -4,8 +4,6 @@
             <h1>Welcome</h1>
         </div>
         <div v-else>
-            <h1>Welcome to the application, please login or register for start</h1>
-
             <div class="container">
                 <div class="row card">
                     <Signin/>
@@ -13,7 +11,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 

@@ -1,12 +1,13 @@
 <template>
-    <div class="card container padding">
-        <h1>Profile</h1>
-        <br>
-        <ul class="list-group">
-            <li v-for="({ author }, index) in users" :key="index" class="list-group-item">
-                {{ 'Nom : ' + author }}
-            </li>
-        </ul>
+    <div class="card container">
+        <div class="card-body">
+            <h5 class="card-title">Profile</h5>
+            <div class="messages" id="target-message" v-for="({ name, email, password }, index) in users" :key="index">
+                {{ name }}
+                {{ email }}
+                {{ password }}
+            </div>
+        </div>
     </div>
 </template>
 
@@ -27,6 +28,7 @@
 
             this.socket.on('USERS', (data) => {
                 this.users = data;
+                console.log(this.users.length);
             });
         },
         computed: mapState ([

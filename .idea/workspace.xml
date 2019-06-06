@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="442a6830-e5d7-455c-bcab-da33f1aba16c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/packages/vue/src/views/Chat.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/vue/src/views/profile.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/vue/src/components/Admin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/vue/src/components/Profile.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/db/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/db/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/sqlitedb" beforeDir="false" afterPath="$PROJECT_DIR$/packages/sqlitedb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/vue/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/App.vue" afterDir="false" />
@@ -16,9 +14,9 @@
       <change beforePath="$PROJECT_DIR$/packages/vue/src/components/auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/components/auth/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/vue/src/components/auth/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/components/auth/Register.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/vue/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/vue/src/views/Chat.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/components/Chat.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/vue/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/vue/src/views/profile.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,99 +29,55 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/packages/vue/src/assets/style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/packages/vue/src/views/Chat.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="648">
-                  <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/packages/vue/src/views/profile.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2">
-                  <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/packages/server/server.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="662">
-                  <caret line="164" column="67" selection-start-line="164" selection-start-column="67" selection-end-line="164" selection-end-column="67" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/packages/vue/src/components/auth/Register.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="519">
-                  <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/packages/vue/src/App.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="67">
-                  <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/packages/vue/src/components/auth/Register.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="608">
-                  <caret line="66" column="77" selection-start-line="66" selection-start-column="77" selection-end-line="66" selection-end-column="77" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/packages/server/db.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="322">
-                  <caret line="93" column="1" lean-forward="true" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
-                  <folding>
-                    <element signature="e#16#1339#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/server/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="111" column="41" lean-forward="true" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
+              <folding>
+                <element signature="e#2281#2445#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/packages/vue/src/components/auth/Login.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/vue/src/components/auth/Register.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="587">
+              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/vue/src/components/Chat.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="9" column="111" selection-start-line="9" selection-start-column="111" selection-end-line="9" selection-end-column="111" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -144,12 +98,20 @@
       <find>chat</find>
       <find>dbuser</find>
       <find>current</find>
-      <find>content</find>
       <find>new</find>
       <find>hr</find>
       <find>border</find>
       <find>connect</find>
       <find>CONNECT</find>
+      <find>heig</find>
+      <find>len</find>
+      <find>content</find>
+      <find>users</find>
+      <find>email</find>
+      <find>error</find>
+      <find>name</find>
+      <find>USERS</find>
+      <find>userData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,11 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/authTut/server/package.json" />
-        <option value="$PROJECT_DIR$/authTut/db/package.json" />
-        <option value="$PROJECT_DIR$/authTut/db/db.json" />
-        <option value="$PROJECT_DIR$/views/login.html" />
         <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
@@ -192,31 +149,34 @@
         <option value="$PROJECT_DIR$/packages/vue/src/main.js" />
         <option value="$PROJECT_DIR$/packages/server/views/index.ejs" />
         <option value="$PROJECT_DIR$/packages/vue/package.json" />
-        <option value="$PROJECT_DIR$/packages/vue/src/views/Home.vue" />
-        <option value="$PROJECT_DIR$/packages/vue/src/components/auth/Login.vue" />
         <option value="$PROJECT_DIR$/packages/db/db.js" />
         <option value="$PROJECT_DIR$/packages/vue/src/store.js" />
         <option value="$PROJECT_DIR$/packages/server/package.json" />
         <option value="$PROJECT_DIR$/packages/vue/vue.config.js" />
         <option value="$PROJECT_DIR$/packages/vue/src/views/chat.vue" />
-        <option value="$PROJECT_DIR$/packages/vue/src/router.js" />
         <option value="$PROJECT_DIR$/packages/server/dbUsers.json" />
-        <option value="$PROJECT_DIR$/packages/vue/src/assets/style.css" />
-        <option value="$PROJECT_DIR$/packages/vue/src/views/Chat.vue" />
         <option value="$PROJECT_DIR$/packages/vue/public/index.html" />
-        <option value="$PROJECT_DIR$/packages/vue/src/App.vue" />
+        <option value="$PROJECT_DIR$/packages/vue/src/views/Home.vue" />
+        <option value="$PROJECT_DIR$/packages/vue/src/views/Chat.vue" />
         <option value="$PROJECT_DIR$/packages/vue/src/views/profile.vue" />
-        <option value="$PROJECT_DIR$/packages/server/server.js" />
+        <option value="$PROJECT_DIR$/packages/vue/src/views/Admin.vue" />
+        <option value="$PROJECT_DIR$/packages/vue/src/router.js" />
+        <option value="$PROJECT_DIR$/packages/vue/src/assets/style.css" />
+        <option value="$PROJECT_DIR$/packages/vue/src/components/Home.vue" />
+        <option value="$PROJECT_DIR$/packages/vue/src/App.vue" />
+        <option value="$PROJECT_DIR$/packages/vue/src/components/Admin.vue" />
         <option value="$PROJECT_DIR$/packages/server/db.json" />
+        <option value="$PROJECT_DIR$/packages/vue/src/components/Chat.vue" />
+        <option value="$PROJECT_DIR$/packages/vue/src/components/Profile.vue" />
+        <option value="$PROJECT_DIR$/packages/server/server.js" />
+        <option value="$PROJECT_DIR$/packages/vue/src/components/auth/Login.vue" />
         <option value="$PROJECT_DIR$/packages/vue/src/components/auth/Register.vue" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-217" />
-    <option name="y" value="-1080" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -269,14 +229,6 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -304,20 +256,20 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/vue/src/views" />
+      <recent name="$PROJECT_DIR$/authTut/packages/chat" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/vue/src/components" />
       <recent name="$PROJECT_DIR$/packages/vue/src/components/auth" />
       <recent name="$PROJECT_DIR$/packages/vue/src/assets" />
       <recent name="$PROJECT_DIR$/packages" />
       <recent name="$PROJECT_DIR$/vue" />
-      <recent name="$PROJECT_DIR$/packages/server/views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/packages/vue/src/views" />
-      <recent name="$PROJECT_DIR$/authTut/packages/chat" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -408,24 +360,24 @@
       <workItem from="1559140858082" duration="5475000" />
       <workItem from="1559307316569" duration="12517000" />
       <workItem from="1559547954756" duration="62724000" />
-      <workItem from="1559738827059" duration="5040000" />
+      <workItem from="1559738827059" duration="28542000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113952000" />
+    <option name="totallyTimeSpent" value="137454000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-217" y="-1080" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46452704" visible="true" weight="0.14639284" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46452704" visible="true" weight="0.20789288" />
       <window_info id="Structure" order="1" sideWeight="0.30966768" side_tool="true" weight="0.13638757" />
       <window_info id="npm" order="2" sideWeight="0.535473" side_tool="true" weight="0.19591261" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32923833" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22334003" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897383" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22235872" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -433,7 +385,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32923833" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5012285" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33292383" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -464,20 +416,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/sessions/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/server/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -579,20 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/vue/src/components/auth/Login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="51" column="59" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/vue/src/views/Home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -724,69 +648,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/vue/src/assets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/vue/src/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="115">
+          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/vue/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="110" selection-start-line="7" selection-start-column="110" selection-end-line="7" selection-end-column="110" />
+        <state relative-caret-position="276">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/server/chat.server.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/vue/src/components/Admin.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/vue/src/components/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/vue/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+        <state relative-caret-position="194">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/vue/src/views/profile.vue">
+    <entry file="file://$PROJECT_DIR$/packages/vue/src/assets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="164" column="67" selection-start-line="164" selection-start-column="67" selection-end-line="164" selection-end-column="67" />
+        <state relative-caret-position="541">
+          <caret line="97" column="19" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/server/db.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="93" column="1" lean-forward="true" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+        <state relative-caret-position="41">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/vue/src/components/Profile.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="111" column="41" lean-forward="true" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
           <folding>
-            <element signature="e#16#1339#0" />
+            <element signature="e#2281#2445#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/vue/src/views/Chat.vue">
+    <entry file="file://$PROJECT_DIR$/packages/vue/src/components/Chat.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="202">
+          <caret line="9" column="111" selection-start-line="9" selection-start-column="111" selection-end-line="9" selection-end-column="111" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/vue/src/components/auth/Register.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="66" column="77" selection-start-line="66" selection-start-column="77" selection-end-line="66" selection-end-column="77" />
+        <state relative-caret-position="587">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/vue/src/components/auth/Login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
         </state>
       </provider>
     </entry>
