@@ -27,6 +27,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "DEBUG=* nodemon --ignore ./sessions server.js"
+    "dev": "nodemon -e js server.js",
+    "dev:debug": "DEBUG=express:* yarn dev"
   }
 }

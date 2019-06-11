@@ -1,16 +1,16 @@
 <template>
     <div id="app">
         <nav class="navbar fixed-top navbar-light bg-primary justify-content-center text-light">
-            <a class="navbar-brand text-light" href="#">
+            <router-link to="/" class="navbar-brand text-light" href="#">
                 <img alt="Vue logo" src="./assets/logo.png" width="30" height="30" class="d-inline-block align-top">
                 SPA of instant chat | NodeJS - VueJS
-            </a>
+            </router-link>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
                     <router-link to="/" class="btn btn-outline-success">Accueil</router-link>
                 </li>
                 <li class="nav-item">
-                <span v-if="isLoggedIn || true">
+                <span v-if="isLoggedIn">
                     <ul class="nav">
                         <li class="nav-item">
                             <router-link class="btn btn-outline-success" to="/chat">Chat</router-link>
@@ -42,22 +42,36 @@
 </template>
 
 <script>
+    import io from 'socket.io-client';
+    import axios from 'axios';
 
     export default {
-        computed: {
-            isLoggedIn: function () {
-                return this.$store.getters.isLoggedIn;
-            }
+        data() {
+            return {
+                socket: null,
+                user_name: null,
+                user_email: null
+            };
         },
         methods: {
-            logout: function () {
-                this.$store.dispatch("logout").then(() => {
-                    this.$router.push("/");
-                });
+            isLoggedIn() {
+                axios.get('/api/login').then(response => {
+                    console.log(response);
+                    this.user_email = response.data.email;
+                    this.user_name = response.data.name;
+                }).catch(error => console.log(error));
+            },
+            logout() {
+                this.socket = io('/', {path: '/api/socket'});
+
+                this.socket.on('logout');
             },
             profile: function () {
                 this.$router.push(("/profile"));
             }
+        },
+        beforeMount() {
+            this.isLoggedIn();
         }
     };
 </script>

@@ -9,6 +9,10 @@ body {
     text-align: center;
 }
 
+label {
+    font-size: 2em;
+}
+
 .footer, .header {
     padding: 2vh;
 }
@@ -60,7 +64,7 @@ body {
 }
 
 .content {
-    min-height: 58vh;
+    min-height: 56vh;
     margin-left: 2vh;
     margin-right: 2vh;
 }
@@ -68,7 +72,7 @@ body {
 .data-target {
     overflow-y:scroll;
     position:relative;
-    height: 58vh;
+    height: 56vh;
     text-align: left;
 }
 

@@ -1,8 +1,8 @@
 <template>
     <div class="card container chat">
         <div class="header bg-primary text-light">
-            <h3><span>@{{ this.user }}</span></h3>
-            <button v-if="socket" type="button" class="btn btn-outline-warning" @click="disconnect">Se déconnecter</button>
+            <h3><span>@{{ user_name }}</span></h3>
+            <a href="/api/logout" v-if="socket" type="button" class="btn btn-outline-warning">Se déconnecter</a>
         </div>
         <div class="content" id="content">
             <div v-if="socket">
@@ -19,7 +19,7 @@
                             {{ content }}
                         <br>
                     </div>
-                    <span v-if="currentContent">{{ `${this.user}  écrit...` }}</span>
+                    <span v-if="currentContent">{{ `${user_name}  écrit...` }}</span>
                 </div>
             </div>
             <div v-else>
@@ -27,19 +27,19 @@
             </div>
         </div>
         <div class="footer bg-primary text-light">
-            <form @submit.prevent="connect" v-if="!socket" class="">
-                <div class="form-group">
-                    <label for="user">Nom d'utilisateur :</label>
-                    <input type="text" v-model="user" class="form-control" id="user">
+
+            <form @submit.prevent="sendMessage">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="message">Message</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input v-model="currentContent" class="form-control" id="message"/>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-outline-success">Envoyer</button>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-outline-success">Se connecter</button>
-            </form>
-            <form @submit.prevent="sendMessage" v-else>
-                <div class="form-group pb-3">
-                    <label for="message">Message</label>
-                    <input type="text" v-model="currentContent" class="form-control" id="message">
-                </div>
-                <button type="submit" class="btn btn-outline-success">Envoyer</button>
             </form>
         </div>
     </div>
@@ -50,6 +50,7 @@
     import Vue from 'vue';
     import VueChatScroll from 'vue-chat-scroll';
     Vue.use(VueChatScroll);
+    import axios from 'axios';
 
     export default {
         data() {
@@ -65,15 +66,20 @@
                 year: null,
                 hour: null,
                 minute: null,
-                socket: null
+                socket: null,
+                user_email: null,
+                user_name: null,
             };
+        },
+        computed: {
+
         },
         methods: {
             sendMessage(e) {
                 e.preventDefault();
 
                 this.socket.emit('SEND_MESSAGE', {
-                    author: this.user,
+                    author: this.user_name,
                     content: this.currentContent,
                     date: new Date().getDate(),
                     month: new Date().getMonth(),
@@ -85,6 +91,12 @@
                 this.currentContent = '';
             },
             connect() {
+                axios.get('/api/login').then(response => {
+                    console.log(response);
+                    this.user_email = response.data.email;
+                    this.user_name = response.data.name;
+                }).catch(error => console.log(error));
+
                 this.socket = io('/', {path: '/api/socket'});
 
                 this.socket.emit('CONNECT', {
@@ -109,14 +121,13 @@
 
                 this.dateToday = new Date().getDate();
             },
-            disconnect() {
-                this.socket.close();
-                this.socket = null;
-            },
             addMessage(message) {
                 this.messages = [...this.messages, message];
             }
         },
+        beforeMount() {
+            this.connect();
+        }
     };
 
 </script>

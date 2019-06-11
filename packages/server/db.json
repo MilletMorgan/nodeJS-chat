@@ -19,57 +19,50 @@
       "minute": 59
     },
     {
-      "author": "Morgan",
-      "content": "Slt",
-      "date": 6,
+      "author": "Morgan Millet",
+      "content": "salut",
+      "date": 11,
       "month": 5,
       "year": 2019,
-      "hour": 10,
-      "minute": 57
+      "hour": 17,
+      "minute": 36
     },
     {
-      "author": "Morgan",
-      "content": "Bonsoir",
-      "date": 6,
+      "author": "Camden Donaldson",
+      "content": "Coment vas tu ?",
+      "date": 11,
       "month": 5,
       "year": 2019,
-      "hour": 10,
-      "minute": 58
+      "hour": 17,
+      "minute": 37
     },
     {
-      "author": "Morgan",
-      "content": "Salut",
-      "date": 6,
+      "author": "Morgan Millet",
+      "content": "Tranquille",
+      "date": 11,
       "month": 5,
       "year": 2019,
-      "hour": 11,
-      "minute": 10
+      "hour": 17,
+      "minute": 39
     }
   ],
   "users": [
     {
+      "id": 0,
       "name": "Morgan Millet",
       "email": "millet.morgan5@gmail.com",
       "password": "root"
     },
     {
+      "id": 1,
       "name": "Yolanda Valdez",
       "email": "jacibipavi@mailinator.com",
       "password": "Pa$$w0rd!"
     },
     {
+      "id": 2,
       "name": "Camden Donaldson",
       "email": "kofularic@mailinator.net",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "name": "Baxter Keller",
-      "email": "deqahyne@mailinator.net",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "name": "Rashad Hood",
-      "email": "viwezefi@mailinator.com",
       "password": "Pa$$w0rd!"
     }
   ]
