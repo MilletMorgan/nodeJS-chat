@@ -1,16 +1,46 @@
 <template>
     <div class="hello">
         <h1>{{ msg }}</h1>
-        <h1>Hello world!</h1>
+
+        <form method="post" @submit.prevent="submit">
+            <label for="message">message</label>
+            <input type="text" id="message" v-model="message">
+            <button type="submit">envoyé</button>
+        </form>
+
+        <table class="table table-striped">
+            <tbody>
+            <tr v-for="({ item }, index) in content" :key="index">
+                <td>{{ itemt }}</td>
+            </tr>
+            </tbody>
+        </table>
+
     </div>
 </template>
 
 <script>
+    import io from 'socket.io-client';
+
     export default {
         name: 'hello',
         data () {
             return {
-                msg: 'HELLO WORLD!'
+                msg: 'HELLO WORLD!',
+                message: null,
+                content: []
+            }
+        },
+        methods: {
+            submit(e) {
+                this.socket = io('/', {path: '/api/socket'});
+
+                e.preventDefault();
+                this.socket.emit('chat message', this.message);
+
+                this.socket.on('chat message', (msg) => {
+                    this.content = msg
+                })
             }
         }
     }

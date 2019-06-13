@@ -62,10 +62,6 @@
 
             <div class="alert alert-success" v-if="success">
                 {{ success }}
-                <br><br>
-                {{ `Email : ${user_email}` }}
-                <br>
-                {{ `Name : ${user_name}` }}
             </div>
             <div class="alert alert-warning" v-if="error">
                 {{ error }}
@@ -76,7 +72,6 @@
 
 <script>
     import axios from 'axios';
-    //import axios from 'axios-https-proxy-fix'
 
     export default {
         data() {
@@ -94,25 +89,18 @@
         },
         methods: {
             register() {
-                //this.socket = io('/', {path: '/api/socket'});
                 if (this.password === this.password_confirmation) {
                     axios.post('/api/register', {
+                        id: null,
                         name: this.name,
                         email: this.email,
                         password: this.password
                     }).then(response => {
                         console.log(response);
-                        /*
                         this.success = 'Vous êtes inscrit avec succès !';
-                        this.user_email = response.data.email;
-                        this.user_name = response.data.name;
-
-                         */
-                    }).catch(error => console.log(error));
-                } else {
-                    this.error =
-                        'Les mots de passes ne correspondent pas !';
-                }
+                    })
+                        .catch(error => console.log(error));
+                } else this.error = 'Les mots de passes ne correspondent pas !';
             }
         }
     };

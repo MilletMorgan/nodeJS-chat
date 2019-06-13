@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './components/Home.vue'
+import Hello from './components/Hello.vue'
 import Login from './components/auth/Login.vue'
 import Register from './components/auth/Register.vue'
 import Chat from './components/Chat.vue'
@@ -39,6 +40,11 @@ let router = new Router ({
           path: '/admin',
           name: 'admin',
           component: Admin
+        },
+        {
+          path: '/test',
+          name: 'test',
+          component: Hello
         },
         {
             path: '/chat',

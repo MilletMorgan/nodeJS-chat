@@ -14,7 +14,7 @@
                 </thead>
                 <tbody>
                 <tr v-for="({ name, email, password }, index) in users" :key="index">
-                    <th scope="row">-</th>
+                    <th scope="row">{{ id }}</th>
                     <td>{{ name }}</td>
                     <td>{{ email }}</td>
                     <td>{{ password }}</td>
@@ -40,9 +40,7 @@
         mounted: function () {
             this.socket = io('/', { path: '/api/socket' });
 
-            this.socket.on('USERS', (data) => {
-                this.users = data;
-            });
+            this.socket.on('ALLUSERS', (data) => this.users = data);
         },
         computed: mapState ([
             'users'

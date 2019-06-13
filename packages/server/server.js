@@ -23,69 +23,43 @@ app.use('/api', router);
 let port = process.env.PORT || 3000;
 
 function loadDb() {
-    return fs.existsSync('./db.json') ? JSON.parse(fs.readFileSync('./db.json').toString()) : {messages: [], users: []};
+    return fs.existsSync('./db.json') ? JSON.parse(fs.readFileSync('./db.json').toString()) : {
+        messages: [],
+        users: [],
+        usersonline: []
+    };
 }
+
 function saveDB() {
     fs.writeFileSync('./db.json', JSON.stringify(db, null, 2));
 }
-
 
 let server = app.listen(port, function () {
     db = loadDb();
     console.log('Server listening on port ' + port);
 });
 
-function filterByEmail(req) {
-    db.users.forEach((user) => { if (req.body.email === user.email) return user; })
-}
-
 passport.use(new LocalStrategy(
     { usernameField: 'email' },
     (email, password, done) => {
-        //axios.get(`http://localhost:5000/users?email=${email}`)
         db.users.forEach((user) => {
-            if (email === user.email){
-                if (!user) {
-                    return done(null, false, { message: 'Invalid credentials.\n' });
-                }
-                if (password !== user.password) {
-                    return done(null, false, { message: 'Invalid credentials.\n' });
-                }
-                //res.json(user);
+            if (email === user.email) {
+                if (!user) return done(null, false, { message: 'Invalid credentials.\n' });
+                if (password !== user.password) return done(null, false, { message: 'Invalid credentials.\n' });
+
                 return done(null, user);
             }
-        })
-
-
-        /*
-        axios.get(`http://localhost:8080/api/users?email=${email}`)
-            .then(res => {
-                const user = res.data[0];
-                if (!user) {
-                    return done(null, false, {message: 'Invalid credentials.\n'});
-                }
-                if (!bcrypt.compareSync(password, user.password)) {
-                    return done(null, false, {message: 'Invalid credentials.\n'});
-                }
-                return done(null, user);
-            })
-            .catch(error => done(error));
-
-         */
+        });
     }
 ));
 
-passport.serializeUser((user, done) => {
-    done(null, user.id);
-});
+passport.serializeUser((user, done) => done(null, user.id));
 
 passport.deserializeUser((id, done) => {
     db.users.forEach((user) => {
-        if (user.id === id)
-            return done(null, user);
+        if (user.id === id) return done(null, user);
     });
 });
-
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -101,25 +75,19 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/', (req, res) => {
-    res.send(`You got home page!\n`);
-});
-
 app.get('/api/login', (req, res) => {
-    if (req.isAuthenticated()) {
-        res.send(req.user);
-    }
+    if (req.isAuthenticated()) res.send(req.user);
 });
 
 app.post('/api/login', (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
-        if (info) {return res.send(info.message)}
-        if (err) { return next(err); }
-        if (!user) { return res.redirect('/login'); }
+        if (info) return res.send(info.message);
+        if (err) return next(err);
+        if (!user) return res.redirect('/login');
         req.login(user, (err) => {
-            if (err) { return next(err); }
+            if (err) return next(err);
             return res.redirect('/api/authrequired');
-        })
+        });
     })(req, res, next);
 });
 
@@ -128,28 +96,20 @@ app.get('/api/logout', (req, res) => {
     res.redirect('/');
 });
 
-app.get('/api/register', (req, res, next) => {
-    res.send("/register");
-});
+app.get('/api/register', (req, res, next) => res.send("/register"));
 
 app.post('/api/register', (req, res) => {
-    const {name, email, password} = req.body;
-    db.users.push({name, email, password});
-    res.json({name, email});
+    const { name, email, password } = req.body;
+
+    let getLastId = db.users[db.users.length-1].id;
+    let id = getLastId + 1;
+
+    db.users.push({ id, name, email, password });
+    res.json({ name, email });
     saveDB();
 });
 
-//app.get('/api/chat', (req, res) => {
-
-//});
-
-app.get('/api/authrequired', (req, res) => {
-    if (req.isAuthenticated()) {
-        res.send(req.user);
-    } else {
-        res.redirect('/');
-    }
-});
+app.get('/api/authrequired', (req, res) => res.send(req.user) ? req.isAuthenticated() : res.redirect('/'));
 
 app.use(express.json());
 
@@ -158,49 +118,83 @@ router.post('/user', (req, res) => {
         'name': req.body.name,
         'email': req.body.email,
         'password': req.body.password
-    })
-        .then((response) => console.log(response))
+    }).then((response) => console.log(response))
         .catch((error) => console.log(error));
 });
 
-router.get('/messages', (req, res) => {
-    res.json(db.messages);
-});
+router.get('/messages', (req, res) => res.json(db.messages));
 
-router.get('/users', (req, res) => {
-    res.json(db.users);
-});
+router.get('/usersonline', (req, res) => res.json(db.usersonline));
 
-router.post('/postdata', () => {
-    db.push("/test1", "super test");
-});
+router.get('/users', (req, res) => res.json(db.users));
 
-
-
-
+router.post('/postdata', () => db.push("/test1", "super test"));
 
 //*********************//
 // APP tChat SOCKET.IO //
 // Register            //
 //*********************//
-const io = require('socket.io')(server, {path: '/api/socket'});
+const io = require('socket.io')(server, { path: '/api/socket' });
+const usersOnline = [];
 
 io.on('connection', socket => {
+    let user_name;
+    const saveNewMessage = (message) => {
+        io.emit('MESSAGE', message);
+        db.messages.push(message);
+        saveDB();
+    };
+
+    socket.join('chat');
+
     socket.emit('MESSAGES', db.messages);
-    socket.emit('USERS', db.users);
-    socket.emit('CONNECTION', db.users[0]);
 
-    socket.on('SEND_MESSAGE', (data) => {
-        io.emit('MESSAGE', data);
-        db.messages.push(data);
-        saveDB();
-    });
-/*
-    socket.on('REGISTER', (data) => {
-        io.emit('USER', data);
-        db.users.push(data);
-        saveDB();
+    socket.emit('ALLUSERS', db.users);
+
+    socket.on('SEND_MESSAGE', saveNewMessage);
+
+    socket.on('NEW_USER', (userName) => {
+        console.log("new user : " + userName);
+        usersOnline.push(userName);
+        user_name = userName;
+        io.emit('USERS', usersOnline);
+
+        saveNewMessage({
+            author: 'ConnectionBot',
+            content: `${userName} s'est connecté !`,
+            date: new Date().getDate(),
+            month: new Date().getMonth(),
+            year: new Date().getFullYear(),
+            hour: new Date().getHours(),
+            minute: new Date().getMinutes()
+        });
     });
 
- */
+    socket.on('disconnect', () => {
+        console.log(`${user_name} got disconnect!`);
+
+        Array.prototype.remove = function() {
+            let what, a = arguments, L = a.length, ax;
+            while (L && this.length) {
+                what = a[--L];
+                while ((ax = this.indexOf(what)) !== -1) {
+                    this.splice(ax, 1);
+                }
+            }
+            return this;
+        };
+
+        usersOnline.remove(user_name);
+        io.emit('USERS', usersOnline);
+
+        saveNewMessage({
+            author: 'ConnectionBot',
+            content: `${user_name} s'est déconnecté !`,
+            date: new Date().getDate(),
+            month: new Date().getMonth(),
+            year: new Date().getFullYear(),
+            hour: new Date().getHours(),
+            minute: new Date().getMinutes()
+        })
+    });
 });
