@@ -8,9 +8,7 @@
                 </div>
             </div>
         </div>
-        <div v-else>
-            <Chat :user="user"/>
-        </div>
+        <Chat :user="user" v-else/>
     </div>
 </template>
 
@@ -33,7 +31,9 @@
         },
         methods: {
             onLogged(user) {
+                console.log("TEST");
                 this.user = user;
+                console.log("TEST");
             }
         }
     }

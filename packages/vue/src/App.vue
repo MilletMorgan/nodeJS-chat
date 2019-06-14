@@ -17,9 +17,6 @@
                 </li>
                 <li class="nav-item">
                     <a href="/api/logout" type="button" class="btn btn-outline-warning">DISCONNECT</a>
-
-                    <button type="button" class="btn btn-outline-warning" @click="logout">Déconnexion</button>
-
                 </li>
             </ul>
         </nav>
@@ -44,7 +41,9 @@
         },
         methods: {
             isLoggedIn() {
+                console.log("TEST APP");
                 axios.get('/api/login').then(response => {
+                    console.log("TEST");
                     console.log(response);
                     this.user_id = response.data.id;
                     this.user_email = response.data.email;
@@ -52,6 +51,7 @@
                     this.connected = true;
                     console.log("User " + this.user_name + " connected");
                 }).catch(error => console.log(error));
+                console.log("TEST APP 2");
             },
             logout() {
                 this.socket = io('/', {path: '/api/socket'});

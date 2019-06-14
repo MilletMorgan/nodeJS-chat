@@ -7,7 +7,8 @@ const FileStore = require('session-file-store')(session);
 const bodyParser = require('body-parser');
 const passport = require('passport/lib');
 const LocalStrategy = require('passport-local').Strategy;
-const bcrypt = require('bcrypt-nodejs');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 const fs = require('fs');
 const router = express.Router();
 const axios = require('axios');
@@ -45,7 +46,8 @@ passport.use(new LocalStrategy(
         db.users.forEach((user) => {
             if (email === user.email) {
                 if (!user) return done(null, false, { message: 'Invalid credentials.\n' });
-                if (password !== user.password) return done(null, false, { message: 'Invalid credentials.\n' });
+                if (!bcrypt.compareSync(password, user.password))
+                    return done(null, false, { message: 'Invalid credentials.\n' });
 
                 return done(null, user);
             }
@@ -100,13 +102,14 @@ app.get('/api/register', (req, res, next) => res.send("/register"));
 
 app.post('/api/register', (req, res) => {
     const { name, email, password } = req.body;
-
-    let getLastId = db.users[db.users.length-1].id;
+    let getLastId = db.users[db.users.length - 1].id;
     let id = getLastId + 1;
 
-    db.users.push({ id, name, email, password });
-    res.json({ name, email });
-    saveDB();
+    bcrypt.hash(password, 10, function (err, password) {
+        db.users.push({ id, name, email, password });
+        res.json({ name, email });
+        saveDB();
+    });
 });
 
 app.get('/api/authrequired', (req, res) => res.send(req.user) ? req.isAuthenticated() : res.redirect('/'));
@@ -173,7 +176,7 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         console.log(`${user_name} got disconnect!`);
 
-        Array.prototype.remove = function() {
+        Array.prototype.remove = function () {
             let what, a = arguments, L = a.length, ax;
             while (L && this.length) {
                 what = a[--L];
@@ -195,6 +198,6 @@ io.on('connection', socket => {
             year: new Date().getFullYear(),
             hour: new Date().getHours(),
             minute: new Date().getMinutes()
-        })
+        });
     });
 });

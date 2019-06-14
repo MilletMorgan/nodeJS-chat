@@ -1,5 +1,5 @@
 body {
-    margin-top: 10vh;
+    margin-top: 8vh;
 }
 
 #app {
@@ -13,15 +13,31 @@ label {
     font-size: 2em;
 }
 
+.button-login {
+    margin-top: 22vh;
+}
+
 .footer, .header {
     padding: 2vh;
+}
+
+.header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.usersonline {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.margin-box {
+    margin-top: 2vh;
 }
 
 .card {
     /*border: 1px solid rgba(0, 0, 0, 0.1);*/
     border: none;
     border-radius: 1vh;
-    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
     margin-bottom: 10vh;
     margin-top: 10vh;
     flex-direction: inherit;
@@ -38,7 +54,7 @@ label {
 }
 
 .form-signup {
-    color: #FFFFFF!important;
+    color: #FFFFFF !important;
 }
 
 .element {
@@ -49,16 +65,7 @@ label {
     margin-right: 1vh;
 }
 
-
-.chat {
-    display: block;
-    padding: 0!important;
-    overflow-y: scroll;
-    text-align: center;
-    position: relative;
-}
-
-.chat-footer{
+.chat-footer {
     height: 100%;
     position: absolute;
 }
@@ -70,9 +77,9 @@ label {
 }
 
 .data-target {
-    overflow-y:scroll;
-    position:relative;
-    height: 56vh;
+    overflow-y: scroll;
+    position: relative;
+    height: 71.9vh;
     text-align: left;
 }
 
