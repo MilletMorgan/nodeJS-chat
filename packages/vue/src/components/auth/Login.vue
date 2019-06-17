@@ -18,14 +18,14 @@
                 <br>
                 <label for="login-password">Mot de passe</label>
                 <input
-                    class="form-control"
-                    required
-                    v-model="password"
-                    type="password"
-                    placeholder="mot de passe"
-                    name="password"
-                    id="login-password"
-                    autocomplete="password"
+                        class="form-control"
+                        required
+                        v-model="password"
+                        type="password"
+                        placeholder="mot de passe"
+                        name="password"
+                        id="login-password"
+                        autocomplete="password"
                 />
                 <hr/>
                 <button type="submit" class="btn btn-outline-success button-login">
@@ -43,8 +43,6 @@
 </template>
 
 <script>
-    import axios from 'axios';
-
     export default {
         data() {
             return {
@@ -54,14 +52,9 @@
             };
         },
         methods: {
-            async login() {
-                console.log("TEST Login");
-                const { data: { name, email } } = (await axios.post('/api/login', {
-                    email: this.email,
-                    password: this.password
-                }));
-
-                this.$emit('logged', { name, email });
+            login() {
+                this.$store.dispatch('logUser', { email: this.email, password: this.password })
+                    .catch(err => this.error = err);
             }
         }
     };

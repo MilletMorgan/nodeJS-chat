@@ -7,11 +7,12 @@
             <div v-if="socket">
                 <div class="row">
                     <div class="col-md-9">
-                        <div class="data-target margin-box" id="box-scroll" v-chat-scroll>
-                            <div class="messages" id="target-message"
+                        <div class="data-target margin-box list-group list-group-flush" id="box-scroll" v-chat-scroll>
+                            <div class="messages list-group-item"
                                  v-for="({ author, content, date, month, year, hour, minute }, index) in messages"
-                                 :key="index">
-                                <hr>
+                                 :key="index"
+                            >
+
                                 <span class="font-weight-bold" v-if="author === 'ConnectionBot'">🤖 {{ author }}</span>
                                 <span class="font-weight-bold" v-else>{{ author }}</span>
                                 <span class="message-hour">
@@ -20,10 +21,11 @@
                                     {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
                                 </span>
                                 <br>
-                                {{ content }}
+                                <span v-if="author === 'ConnectionBot'" class="bg-warning">{{ content }}</span>
+                                <span v-else>{{ content }}</span>
                                 <br>
                             </div>
-                            <span v-if="currentContent">{{ `${user_name}  écrit...` }}</span>
+                            <!-- <span v-if="currentContent">{{ `${user_name}  écrit...` }}</span> -->
                         </div>
                     </div>
                     <div class="col-md-3 usersonline">
@@ -31,7 +33,7 @@
                             <h4>{{ `${usersOnline.length} utilisateur(s) connecté(s)` }}</h4>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <li v-for="user in usersOnline" class="list-group-item">{{user}}</li>
+                                <li v-for="user in usersOnline" class="list-group-item" :key="user">{{user}}</li>
                             </ul>
                         </div>
                     </div>
@@ -64,7 +66,6 @@
     Vue.use(VueChatScroll);
 
     export default {
-        props: ['user'],
         data() {
             return {
                 messages: [],
@@ -73,6 +74,13 @@
                 dateToday: null,
                 socket: null,
             };
+        },
+        computed: {
+            user() {
+                if (this.$store.state.user !== null)
+                    return this.$store.state.user;
+                return null;
+            }
         },
         methods: {
             sendMessage(e) {
@@ -107,6 +115,10 @@
         },
         beforeMount() {
             this.connect();
+        },
+        beforeDestroy() {
+            console.log('destroy !');
+            this.socket.emit('USER_LEAVE');
         }
     };
 </script>

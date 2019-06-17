@@ -12,9 +12,9 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <th scope="row">{{ user_id }}</th>
-                    <td>{{ user_name }}</td>
-                    <td>{{ user_email }}</td>
+                    <th scope="row">{{ user.id }}</th>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
                 </tr>
                 </tbody>
             </table>
@@ -23,44 +23,29 @@
 </template>
 
 <script>
-    import { mapState } from 'vuex';
     import io from 'socket.io-client';
-    import axios from 'axios';
+    //import axios from 'axios';
 
     export default {
         data() {
-          return {
-              user: null,
-              users: [],
-              socket: null,
-              user_email: null,
-              user_name: null,
-              user_id: null
-          }
+            return {
+                users: [],
+                socket: null,
+            };
         },
-        methods: {
-            isLoggedIn() {
-                axios.get('/api/login').then(response => {
-                    console.log(response);
-                    this.user_id = response.data.id;
-                    this.user_email = response.data.email;
-                    this.user_name = response.data.name;
-                }).catch(error => console.log(error));
-            },
-        },
+        methods: {},
         mounted: function () {
             this.socket = io('/', { path: '/api/socket' });
 
             this.socket.on('USERS', (data) => {
                 this.users = data;
-                console.log(this.users.length);
             });
         },
-        beforeMount() {
-            this.isLoggedIn();
+
+        computed: {
+            user() {
+                return this.$store.state.user
+            }
         },
-        computed: mapState ([
-            'users'
-        ])
-    }
+    };
 </script>

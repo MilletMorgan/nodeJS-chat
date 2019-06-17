@@ -12,11 +12,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="({ id, name, email }, index) in users" :key="index" :class="{selected: index.selected}" @click="select(index)">
-                    <th scope="row"><span ref="{id}}" >{{ id }}</span></th>
+                <tr v-for="({ id, name, email }, index) in users" :key="index" :class="{selected: index.selected}"
+                    @click="select(index)">
+                    <th scope="row"><span ref="{id}}">{{ id }}</span></th>
                     <td>{{ name }}</td>
                     <td>{{ email }}</td>
-                    <td><button @click="supprimer" type="button" class="btn btn-danger">SUPPRIMER</button></td>
+                    <td>
+                        <button @click="supprimer" type="button" class="btn btn-danger">SUPPRIMER</button>
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -34,24 +37,24 @@
                 users: [],
                 socket: null,
                 id: null
-            }
+            };
         },
         methods: {
-          supprimer(index) {
-              index.session = true;
-              const v = selectedUsers();
-              console.log()
-          }
+            supprimer(index) {
+                index.session = true;
+                const v = selectedUsers();
+                console.log();
+            }
         },
         computed: {
-          selectedUsers () {
-              return this.users.filter(index => index.selected)
-          }
+            selectedUsers() {
+                return this.users.filter(index => index.selected);
+            }
         },
         mounted: function () {
             this.socket = io('/', { path: '/api/socket' });
 
             this.socket.on('ALLUSERS', (data) => this.users = data);
         }
-    }
+    };
 </script>

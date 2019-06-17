@@ -3,12 +3,12 @@
         <div v-if="!user">
             <div class="container">
                 <div class="row card">
-                    <Login @logged="onLogged"/>
+                    <Login/>
                     <Signup/>
                 </div>
             </div>
         </div>
-        <Chat :user="user" v-else/>
+        <Chat v-else/>
     </div>
 </template>
 
@@ -18,23 +18,22 @@
     import Chat from '@/components/Chat';
 
     export default {
+    data() {
+        return {
+        };
+    },
+    methods: {
+    },
 
-        data() {
-            return {
-                user: null
-            }
-        },
-        components: {
-            Signup,
-            Login,
-            Chat
-        },
-        methods: {
-            onLogged(user) {
-                console.log("TEST");
-                this.user = user;
-                console.log("TEST");
-            }
+    computed: {
+        user() {
+            return this.$store.state.user
         }
+    },
+    components: {
+        Signup,
+        Login,
+        Chat
     }
+}
 </script>
