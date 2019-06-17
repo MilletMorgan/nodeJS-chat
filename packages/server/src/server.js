@@ -1,7 +1,7 @@
 "use strict";
 
-const Chat = require('./server/chat.js');
-const Authentication = require('./server/authentication.js');
+const Chat = require('./chat.js');
+const Authentication = require('./authentication.js');
 
 const express = require('express');
 const fs = require('fs');

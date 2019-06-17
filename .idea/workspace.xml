@@ -2,24 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="442a6830-e5d7-455c-bcab-da33f1aba16c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/packages/server/server/authentication.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/server/server/chat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/server/server/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/components/Admin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/components/Admin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/components/Chat.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/components/Chat.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/components/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/components/Profile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/components/auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/components/auth/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/vue/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/db/db.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/db/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/db/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/dbUsers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/src/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/server/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/src/authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/server/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/src/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/views/index.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/views/login.ejs" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,18 +27,27 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/packages/server/server.js">
+        <entry file="file://$PROJECT_DIR$/packages/server/src/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="874">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/packages/server/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="477">
+              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/packages/server/server/authentication.js">
+        <entry file="file://$PROJECT_DIR$/packages/server/src/authentication.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1359">
+            <state relative-caret-position="138">
               <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
               <folding>
                 <element signature="e#632#729#0" />
@@ -53,19 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/packages/server/server/router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/packages/server/server/chat.js">
+        <entry file="file://$PROJECT_DIR$/packages/server/src/chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180">
+            <state relative-caret-position="23">
               <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
             </state>
           </provider>
@@ -74,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/packages/server/db.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-744">
-              <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+            <state relative-caret-position="115">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -132,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/packages/server/sessions/.gitignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lerna.json" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -179,10 +172,11 @@
         <option value="$PROJECT_DIR$/packages/vue/src/components/Chat.vue" />
         <option value="$PROJECT_DIR$/packages/vue/src/assets/style.css" />
         <option value="$PROJECT_DIR$/packages/server/db.json" />
-        <option value="$PROJECT_DIR$/packages/server/server.js" />
         <option value="$PROJECT_DIR$/packages/server/server/authentication.js" />
         <option value="$PROJECT_DIR$/packages/server/server/chat.js" />
         <option value="$PROJECT_DIR$/packages/server/server/router.js" />
+        <option value="$PROJECT_DIR$/packages/server/server.js" />
+        <option value="$PROJECT_DIR$/packages/server/src/server.js" />
       </list>
     </option>
   </component>
@@ -209,19 +203,6 @@
               <item name="chat" type="b2602c69:ProjectViewProjectNode" />
               <item name="chat" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -256,16 +237,16 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/packages/vue/src/views" />
-      <recent name="$PROJECT_DIR$/authTut/packages/chat" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/server/src" />
       <recent name="$PROJECT_DIR$/packages/server" />
       <recent name="$PROJECT_DIR$/packages/vue/src/components" />
       <recent name="$PROJECT_DIR$/packages/vue/src/components/auth" />
       <recent name="$PROJECT_DIR$/packages/vue/src/assets" />
-      <recent name="$PROJECT_DIR$/packages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/vue/src/views" />
+      <recent name="$PROJECT_DIR$/authTut/packages/chat" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -359,12 +340,12 @@
       <workItem from="1559738827059" duration="51276000" />
       <workItem from="1560241030633" duration="44179000" />
       <workItem from="1560426931775" duration="12585000" />
-      <workItem from="1560677380735" duration="17467000" />
+      <workItem from="1560677380735" duration="18005000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245610000" />
+    <option name="totallyTimeSpent" value="246148000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -377,7 +358,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="928" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.460177" visible="true" weight="0.2646086" />
       <window_info id="Structure" order="1" sideWeight="0.30966768" side_tool="true" weight="0.13638757" />
@@ -434,9 +414,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/packages/sqlitedb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/server/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1506">
@@ -529,13 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/dbUsers.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/db/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -576,13 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -669,13 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/vue/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -741,13 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/db.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-744">
-          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/application.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -755,16 +704,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/server.js">
+    <entry file="file://$PROJECT_DIR$/packages/server/server/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="23">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/server/authentication.js">
+    <entry file="file://$PROJECT_DIR$/packages/server/src/chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1359">
+        <state relative-caret-position="23">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/server/db.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/server/src/authentication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
           <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
           <folding>
             <element signature="e#632#729#0" />
@@ -772,17 +735,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/server/chat.js">
+    <entry file="file://$PROJECT_DIR$/packages/server/src/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        <state relative-caret-position="874">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/server/router.js">
+    <entry file="file://$PROJECT_DIR$/packages/server/dbUsers.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="46">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/server/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/server/sqlitedb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/server/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
         </state>
       </provider>
     </entry>
