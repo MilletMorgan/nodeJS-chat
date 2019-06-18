@@ -24,6 +24,10 @@ const Chat = (server, db, saveDB) => {
 
         socket.on('SEND_MESSAGE', saveNewMessage);
 
+        socket.on('typing', (data) => {
+            socket.emit('typing', (data));
+        });
+
         socket.on('NEW_USER', (userName) => {
             console.log("new user : " + userName);
             currentUser = { name: userName, timestamp: Date.now() };

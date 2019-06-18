@@ -98,8 +98,7 @@
                     }).then(response => {
                         console.log(response);
                         this.success = 'Vous êtes inscrit avec succès !';
-                    })
-                        .catch(error => console.log(error));
+                    }).catch(error => console.log(error));
                 } else this.error = 'Les mots de passes ne correspondent pas !';
             }
         }

@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-        <nav class="navbar fixed-top navbar-light bg-primary justify-content-center text-light">
-            <router-link to="/" class="navbar-brand text-light">
+        <nav class="navbar fixed-top navbar-light bg-white justify-content-center text-dark">
+            <router-link to="/" class="navbar-brand">
                 <img alt="Vue logo" src="./assets/logo.png" width="30" height="30" class="d-inline-block align-top">
                 SPA of instant chat | NodeJS - VueJS
             </router-link>
@@ -28,16 +28,14 @@
 </template>
 
 <script>
-    export default{
+    export default {
         data() {
-            return {
-            };
+            return {};
         },
-        methods: {
-        },
+        methods: {},
         computed: {
             user() {
-                return this.$store.state.user
+                return this.$store.state.user;
             }
         },
 

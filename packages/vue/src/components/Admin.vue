@@ -39,18 +39,8 @@
                 id: null
             };
         },
-        methods: {
-            supprimer(index) {
-                index.session = true;
-                const v = selectedUsers();
-                console.log();
-            }
-        },
-        computed: {
-            selectedUsers() {
-                return this.users.filter(index => index.selected);
-            }
-        },
+        methods: {},
+        computed: {},
         mounted: function () {
             this.socket = io('/', { path: '/api/socket' });
 

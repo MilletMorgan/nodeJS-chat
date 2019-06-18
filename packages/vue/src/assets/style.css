@@ -10,7 +10,7 @@ body {
 }
 
 label {
-    font-size: 2em;
+    font-size: 1.7em;
 }
 
 .button-login {
@@ -22,11 +22,12 @@ label {
 }
 
 .header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255,255,255, 0.5);
+    padding-top: 5vh;
 }
 
 .usersonline {
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(255,255,255, 0.5);
 }
 
 .margin-box {
@@ -65,9 +66,36 @@ label {
     margin-right: 1vh;
 }
 
+.chat {
+    background: linear-gradient(45deg, deeppink, yellow);
+}
+
 .chat-footer {
     height: 100%;
     position: absolute;
+}
+
+.messageBot {
+    margin: 1vh;
+    margin-right: 45%;
+    border-radius: 5vh;
+    padding: 2vh;
+}
+
+.messageUser {
+    background: deeppink;
+    margin: 1vh;
+    margin-left: 45%;
+    border-radius: 5vh;
+    padding: 2vh;
+}
+
+.messageOtherUser {
+    background: green;
+    margin: 1vh;
+    margin-right: 45%;
+    border-radius: 5vh;
+    padding: 2vh;
 }
 
 .content {
