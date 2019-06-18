@@ -4,7 +4,7 @@
             <h2>Inscription</h2>
             <hr>
             <form @submit.prevent="register">
-                <label for="name">Nom</label>
+                <label for="name">Nom complet</label>
                 <input
                         class="form-control"
                         id="name"

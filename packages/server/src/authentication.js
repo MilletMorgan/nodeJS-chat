@@ -6,7 +6,7 @@ const passport = require('passport/lib');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 
-const Authentication = (app, db) => {
+const Authentication = (app, db, saveDB) => {
     passport.use(new LocalStrategy(
         { usernameField: 'email' },
         (email, password, done) => {

@@ -1,52 +1,74 @@
 <template>
     <div class="chat">
-        <div class="header">
+        <div class="header text-light">
             <h3><span>@{{ user.name }}</span></h3>
         </div>
         <div class="content" id="content">
             <div v-if="socket">
                 <div class="row">
                     <div class="col-md-9">
-                        <div class="data-target margin-box list-group list-group-flush" id="box-scroll" v-chat-scroll>
-                            <div class="messages list-group-item"
+                        <div class="data-target list-group list-group-flush" id="box-scroll" v-chat-scroll>
+                            <div class="messages"
                                  v-for="({ author, content, date, month, year, hour, minute }, index) in messages"
                                  :key="index"
                             >
-
-                                <span class="font-weight-bold" v-if="author === 'ConnectionBot'">🤖 {{ author }}</span>
-                                <span class="font-weight-bold" v-else>{{ author }}</span>
-                                <span class="message-hour">
+                                <div v-if="author === 'ConnectionBot'"
+                                     class="messageBot bg-light text-dark animated fadeInUp">
+                                    <span class="font-weight-bold">🤖 {{ author }}</span>
+                                    <span class="message-hour">
                                     <span v-if="( date !== dateToday )"> | Le </span>
                                     <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
-                                    {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
-                                </span>
-                                <br>
-                                <span v-if="author === 'ConnectionBot'" class="bg-warning">{{ content }}</span>
-                                <span v-else>{{ content }}</span>
+                                        {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
+                                    </span>
+                                    <br>
+                                    <span>{{ content }}</span>
+                                </div>
+                                <div v-else-if="author !== user.name"
+                                     class="messageOtherUser bg-info text-light animated fadeInUp">
+                                    <span class="font-weight-bold">{{ author }}</span>
+                                    <span class="message-hour">
+                                    <span v-if="( date !== dateToday )"> | Le </span>
+                                    <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
+                                        {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
+                                    </span>
+                                    <br>
+                                    <span>{{ content }}</span>
+                                </div>
+                                <div v-else-if="author === user.name"
+                                     class="messageUser bg-success text-light animated fadeInUp">
+                                    <span class="font-weight-bold">{{ author }}</span>
+                                    <span class="message-hour">
+                                    <span v-if="( date !== dateToday )"> | Le </span>
+                                    <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
+                                        {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
+                                    </span>
+                                    <br>
+                                    <span>{{ content }}</span>
+                                </div>
                                 <br>
                             </div>
-                            <!-- <span v-if="currentContent">{{ `${user_name}  écrit...` }}</span> -->
+                            <!-- <span v-if="currentContent">{{typing}} is typing</span> -->
                         </div>
                     </div>
                     <div class="col-md-3 usersonline">
                         <div class="margin-box">
-                            <h4>{{ `${usersOnline.length} utilisateur(s) connecté(s)` }}</h4>
+                            <h4 class="text-light">{{ `${usersOnline.length} utilisateur(s) connecté(s)` }}</h4>
                             <br>
                             <ul class="list-group list-group-flush">
-                                <li v-for="user in usersOnline" class="list-group-item" :key="user">{{user}}</li>
+                                <li v-for="user in usersOnline"
+                                    class="list-group-item messages bg-info text-light wow animated fadeInUp"
+                                    :key="user">{{user}}
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer bg-primary text-light">
+        <div class="footer">
             <form @submit.prevent="sendMessage">
                 <div class="row">
-                    <div class="col-md-2">
-                        <label for="message">Message</label>
-                    </div>
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <input v-model="currentContent" class="form-control" id="message"/>
                     </div>
                     <div class="col-md-2">
@@ -72,31 +94,41 @@
                 usersOnline: [],
                 currentContent: null,
                 dateToday: null,
-                socket: null,
+                socket: null
             };
         },
         computed: {
             user() {
-                if (this.$store.state.user !== null)
-                    return this.$store.state.user;
-                return null;
+                return this.$store.state.user;
+            }
+        },
+        created() {
+            this.socket.on('typing', (data) => {
+                this.typing = data;
+            });
+        },
+        watch: {
+            currentContent: function () {
+                if (this.currentContent) {
+                    this.socket.emit('typing', this.user.name);
+                }
             }
         },
         methods: {
             sendMessage(e) {
                 e.preventDefault();
 
-                const emoji = ["🙃", "😀", "🤢", "😡"];
-                const randomEmoji = emoji[Math.floor(Math.random() * emoji.length)];
+                //const emoji = ["🙃", "😀", "🤢", "😡"];
+                //const randomEmoji = emoji[Math.floor(Math.random() * emoji.length)];
 
                 this.socket.emit('SEND_MESSAGE', {
-                    author: randomEmoji + this.user.name,
+                    author: this.user.name,
                     content: this.currentContent,
                     date: new Date().getDate(),
                     month: new Date().getMonth(),
                     year: new Date().getFullYear(),
                     hour: new Date().getHours(),
-                    minute: new Date().getMinutes()
+                    minute: new Date().getMinutes(),
                 });
 
                 this.currentContent = '';
@@ -105,9 +137,13 @@
                 this.socket = io('/', { path: '/api/socket' });
                 this.socket.emit('NEW_USER', this.user.name);
                 this.socket.on('MESSAGE', this.addMessage);
-                this.socket.on('MESSAGES', (data) => this.messages = data);
+                this.socket.on('MESSAGES', (data) => {
+                    this.messages = data;
+                    //console.log("obj message : " + this.messages[0].author);
+                });
                 this.socket.on('USERS', (users) => this.usersOnline = users);
                 this.dateToday = new Date().getDate();
+                console.log("objet message : " + this.messages[0].author);
             },
             addMessage(message) {
                 this.messages = [...this.messages, message];

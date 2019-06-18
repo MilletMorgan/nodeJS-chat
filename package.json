@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "start": "lerna run start --stream",
-    "dev": "lerna run dev --stream"
+    "dev": "lerna run dev --stream",
+    "prod": "yarn workspace spa build && NODE_ENV=production yarn workspace server start"
   },
   "dependencies": {
     "axios-https-proxy-fix": "^0.17.1",

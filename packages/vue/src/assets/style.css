@@ -10,23 +10,29 @@ body {
 }
 
 label {
-    font-size: 2em;
+    font-size: 1.7em;
+}
+
+.col-md-9 {
+    background-image: linear-gradient(45deg,#ff1493,#ff0);
+    background-attachment: local;
 }
 
 .button-login {
-    margin-top: 22vh;
+    margin-top: 20vh;
 }
 
 .footer, .header {
-    padding: 2vh;
+    padding: 3vh 3vh 3vh 3vh;
 }
 
 .header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 3vh;
 }
 
 .usersonline {
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .margin-box {
@@ -65,21 +71,56 @@ label {
     margin-right: 1vh;
 }
 
+.chat {
+    background: #000;
+}
+
 .chat-footer {
     height: 100%;
     position: absolute;
 }
 
+li.list-group-item.messages.bg-info.text-light.wow.animated.fadeInUp {
+    border-radius: 5vh;
+    margin: 1vh;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.messageBot {
+    margin: 1vh;
+    margin-right: 45%;
+    border-radius: 5vh;
+    padding: 2vh;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.messageUser {
+    background: deeppink;
+    margin: 1vh;
+    margin-left: 45%;
+    border-radius: 5vh;
+    padding: 2vh;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.messageOtherUser {
+    background: green;
+    margin: 1vh;
+    margin-right: 45%;
+    border-radius: 5vh;
+    padding: 2vh;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
 .content {
     min-height: 56vh;
-    margin-left: 2vh;
-    margin-right: 2vh;
+    overflow: hidden;
 }
 
 .data-target {
     overflow-y: scroll;
     position: relative;
-    height: 71.9vh;
+    height: 76vh;
     text-align: left;
 }
 

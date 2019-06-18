@@ -44,7 +44,7 @@ const Chat = (server, db, saveDB) => {
         });
 
         const disconnectUser = () => {
-            console.log(`${currentUser.name} got disconnect!`);
+            //console.log(`${currentUser.name} got disconnect!`);
 
             usersOnline = usersOnline.filter(user => user !== currentUser);
             io.emit('USERS', getUsersNames());
