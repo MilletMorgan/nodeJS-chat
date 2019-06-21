@@ -89,6 +89,7 @@
         },
         methods: {
             register() {
+
                 if (this.password === this.password_confirmation) {
                     axios.post('/api/register', {
                         id: null,

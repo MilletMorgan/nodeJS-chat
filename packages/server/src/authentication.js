@@ -49,12 +49,14 @@ const Authentication = (app, db, saveDB) => {
     });
 
     app.post('/api/login', (req, res, next) => {
+        console.log("TEST Login 2");
         passport.authenticate('local', (err, user, info) => {
             if (info) return res.send(info.message);
             if (err) return next(err);
             if (!user) return res.redirect('/login');
             req.login(user, (err) => {
                 if (err) return next(err);
+                console.log("TEST Login 1");
                 return res.redirect('/api/authrequired');
             });
         })(req, res, next);
@@ -73,9 +75,11 @@ const Authentication = (app, db, saveDB) => {
         let id = getLastId + 1;
 
         bcrypt.hash(password, 10, function (err, password) {
+            console.log({ id, name, email, password });
             db.users.push({ id, name, email, password });
             res.json({ name, email });
             saveDB();
+            console.log(db)
         });
     });
 

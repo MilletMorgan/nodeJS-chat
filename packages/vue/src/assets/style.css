@@ -1,5 +1,4 @@
 body {
-    margin-top: 8vh;
 }
 
 #app {
@@ -13,26 +12,15 @@ label {
     font-size: 1.7em;
 }
 
-.col-md-9 {
-    background-image: linear-gradient(45deg,#ff1493,#ff0);
-    background-attachment: local;
-}
-
 .button-login {
     margin-top: 20vh;
 }
 
 .footer, .header {
-    padding: 3vh 3vh 3vh 3vh;
-}
-
-.header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    padding-top: 3vh;
+    padding: 2vh 2vh 2vh 2vh;
 }
 
 .usersonline {
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .margin-box {
@@ -40,19 +28,21 @@ label {
 }
 
 .card {
-    /*border: 1px solid rgba(0, 0, 0, 0.1);*/
     border: none;
     border-radius: 1vh;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10vh;
-    margin-top: 10vh;
+    -webkit-box-shadow: 0 20px 30px rgba(0,0,0,.2);
+    box-shadow: 0 20px 30px rgba(0,0,0,.2);
+    -webkit-box-orient: inherit;
+    -webkit-box-direction: inherit;
+    -ms-flex-direction: inherit;
     flex-direction: inherit;
 }
 
+/*
 .padding {
     padding: 5vh;
 }
-
+*/
 .signup {
     background: #007bff;
     color: #FFF;
@@ -72,55 +62,65 @@ label {
 }
 
 .chat {
-    background: #000;
+    background: #240b36;
 }
 
+/*
 .chat-footer {
     height: 100%;
     position: absolute;
 }
 
+
+ */
+
 li.list-group-item.messages.bg-info.text-light.wow.animated.fadeInUp {
     border-radius: 5vh;
     margin: 1vh;
-    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+    background-color: rgba(52,152,219,0.5) !important;
 }
 
 .messageBot {
-    margin: 1vh;
-    margin-right: 45%;
-    border-radius: 5vh;
+    margin: 1vh 45% 1vh 1vh;
     padding: 2vh;
-    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5vh 5vh 5vh 0;
+    background-color: rgba(52,152,219,0.5) !important;
+    color: #FFF;
 }
 
 .messageUser {
-    background: deeppink;
-    margin: 1vh;
-    margin-left: 45%;
-    border-radius: 5vh;
     padding: 2vh;
-    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+    background: #240b36;
+    margin: 1vh 1vh 1vh 45%;
+    border-radius: 5vh 5vh 0 5vh;
+    color: #FFF;
 }
 
 .messageOtherUser {
-    background: green;
-    margin: 1vh;
-    margin-right: 45%;
-    border-radius: 5vh;
+    background: #c31432!important;
+    border-radius: 5vh 5vh 5vh 0;
+    margin: 1vh 45% 1vh 1vh;
     padding: 2vh;
-    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 10px 1px rgba(0,0,0,.5);
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,.5);
+    color: #FFF;
 }
 
 .content {
-    min-height: 56vh;
     overflow: hidden;
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .data-target {
     overflow-y: scroll;
     position: relative;
-    height: 76vh;
+    height: 75vh;
     text-align: left;
 }
 

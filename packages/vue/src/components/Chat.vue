@@ -12,38 +12,40 @@
                                  v-for="({ author, content, date, month, year, hour, minute }, index) in messages"
                                  :key="index"
                             >
-                                <div v-if="author === 'ConnectionBot'"
-                                     class="messageBot bg-light text-dark animated fadeInUp">
-                                    <span class="font-weight-bold">🤖 {{ author }}</span>
-                                    <span class="message-hour">
+                                <div>
+                                    <div v-if="author === 'ConnectionBot'"
+                                         class="messageBot animated fadeInUp">
+                                        <span class="font-weight-bold">🤖 {{ author }}</span>
+                                        <span class="message-hour">
                                     <span v-if="( date !== dateToday )"> | Le </span>
                                     <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
-                                        {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
+                                        {{ `${date}/${month}/${year} - ${hour}h${minute} `}}
                                     </span>
-                                    <br>
-                                    <span>{{ content }}</span>
-                                </div>
-                                <div v-else-if="author !== user.name"
-                                     class="messageOtherUser bg-info text-light animated fadeInUp">
-                                    <span class="font-weight-bold">{{ author }}</span>
-                                    <span class="message-hour">
+                                        <br>
+                                        <span>{{ content }}</span>
+                                    </div>
+                                    <div v-else-if="author !== user.name"
+                                         class="messageOtherUser animated fadeInUp">
+                                        <span class="font-weight-bold">{{ author }}</span>
+                                        <span class="message-hour">
                                     <span v-if="( date !== dateToday )"> | Le </span>
                                     <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
-                                        {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
+                                        {{ `${date}/${month}/${year} - ${hour}h${minute} `}}
                                     </span>
-                                    <br>
-                                    <span>{{ content }}</span>
-                                </div>
-                                <div v-else-if="author === user.name"
-                                     class="messageUser bg-success text-light animated fadeInUp">
-                                    <span class="font-weight-bold">{{ author }}</span>
-                                    <span class="message-hour">
+                                        <br>
+                                        <span>{{ content }}</span>
+                                    </div>
+                                    <div v-else-if="author === user.name"
+                                         class="messageUser animated fadeInUp">
+                                        <span class="font-weight-bold">{{ author }}</span>
+                                        <span class="message-hour">
                                     <span v-if="( date !== dateToday )"> | Le </span>
                                     <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
-                                        {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
+                                        {{ `${date}/${month}/${year} - ${hour}h${minute} `}}
                                     </span>
-                                    <br>
-                                    <span>{{ content }}</span>
+                                        <br>
+                                        <span>{{ content }}</span>
+                                    </div>
                                 </div>
                                 <br>
                             </div>
@@ -54,12 +56,25 @@
                         <div class="margin-box">
                             <h4 class="text-light">{{ `${usersOnline.length} utilisateur(s) connecté(s)` }}</h4>
                             <br>
+
+
+                            <button class="btn btn-primary" @click="switchRoom">Switch room</button>
+                            <button class="btn btn-primary" @click="switchGlobalRoom">Switch to global room</button>
+
                             <ul class="list-group list-group-flush">
                                 <li v-for="user in usersOnline"
-                                    class="list-group-item messages bg-info text-light wow animated fadeInUp"
-                                    :key="user">{{user}}
+                                    :key="user"
+                                    class="list-group-item wow animated fadeInUp"
+                                >
+                                    <button type="submit"
+                                            @click="roomWithUser"
+                                            class="messages bg-info text-light"
+                                    >
+                                        <span>{{user}}</span>
+                                    </button>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                 </div>
@@ -92,9 +107,11 @@
             return {
                 messages: [],
                 usersOnline: [],
+                userRoom: null,
                 currentContent: null,
                 dateToday: null,
-                socket: null
+                socket: null,
+                actualRoom: "globalRoom"
             };
         },
         computed: {
@@ -128,32 +145,51 @@
                     month: new Date().getMonth(),
                     year: new Date().getFullYear(),
                     hour: new Date().getHours(),
-                    minute: new Date().getMinutes(),
+                    minute: new Date().getMinutes()
                 });
 
                 this.currentContent = '';
             },
             connect() {
                 this.socket = io('/', { path: '/api/socket' });
+                this.socket.emit('room', this.actualRoom);
                 this.socket.emit('NEW_USER', this.user.name);
                 this.socket.on('MESSAGE', this.addMessage);
                 this.socket.on('MESSAGES', (data) => {
                     this.messages = data;
-                    //console.log("obj message : " + this.messages[0].author);
                 });
                 this.socket.on('USERS', (users) => this.usersOnline = users);
                 this.dateToday = new Date().getDate();
-                console.log("objet message : " + this.messages[0].author);
+                // console.log("objet message : " + this.messages[0].author);
             },
             addMessage(message) {
                 this.messages = [...this.messages, message];
             },
+
+            switchRoom() {
+                let newsroom = "newsroom";
+                this.socket.emit('switchRoom', this.actualRoom, newsroom);
+                this.actualRoom = newsroom;
+                console.log("Switch room to " + this.actualRoom)
+            },
+            switchGlobalRoom() {
+                let newsroom = "globalRoom";
+                this.socket.emit('switchRoom', this.actualRoom, newsroom);
+                this.actualRoom = newsroom;
+            },
+
+            roomWithUser() {
+                let room = this.userRoom;
+                this.actualRoom = room;
+                console.log("room : " + room);
+                this.socket.emit('switchRoom', room);
+            }
         },
         beforeMount() {
             this.connect();
         },
         beforeDestroy() {
-            console.log('destroy !');
+            //console.log('destroy !');
             this.socket.emit('USER_LEAVE');
         }
     };

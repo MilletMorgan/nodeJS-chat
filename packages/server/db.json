@@ -1,5 +1,6 @@
 {
-  "messages": [],
+  "rooms": [
+  ],
   "users": [
     {
       "id": 0,
@@ -9,59 +10,9 @@
     },
     {
       "id": 1,
-      "name": "Holmes Cole",
-      "email": "fypom@mailinator.net",
-      "password": "$2b$10$WxV../jOWciWXn9msu0p7.hGOSg1Aoplcnu9r07NS6CH3KEtnj3uO"
-    },
-    {
-      "id": 2,
-      "name": "Macon Knox",
-      "email": "nemiq@mailinator.net",
-      "password": "$2b$10$Z0PRLJwq6CmJ9k51C17ROubO/Ujis1XqsaijTfMkcvjjkLcl.WTJe"
-    },
-    {
-      "id": 3,
-      "name": "Willow Fulton",
-      "email": "ginaqody@mailinator.com",
-      "password": "$2b$10$9eZjOqiY3VeFQjv0DFMnVuDLuqm6paenub.6TNSol5UmfzUpzd8n2"
-    },
-    {
-      "id": 4,
-      "name": "Zelda Graves",
-      "email": "rorok@mailinator.com",
-      "password": "$2b$10$jN6uw00ZnqH9zaA4FI7SZOpfdSHFh5SCDd/sbrvI/CMiFSl/KVHL."
-    },
-    {
-      "id": 5,
-      "name": "Amanda Wynn",
-      "email": "kuca@mailinator.com",
-      "password": "$2b$10$HQZKDcWF5AytJGlwGNNaROo/oTXd9Xo0MtGh.S8DG/VlEa9vx.d9G"
-    },
-    {
-      "id": 6,
-      "name": "Lillith Thompson",
-      "email": "ziwafud@mailinator.com",
-      "password": "$2b$10$2p3jAYymzf7gMW.PzMpLOOQY95k.91e8atvdhv0FNWWieCIitjZf6"
-    },
-    {
-      "id": 7,
       "name": "Test",
       "email": "test@test.com",
       "password": "$2b$10$VXXov2ikthG/RA9DGpUSMuqSib/It1TFAUcDHdu8ktSDro0bdIp7."
-    }
-  ],
-  "usersonline": [
-    {
-      "name": "Felicia Mcneil",
-      "email": "vuhixiju@mailinator.com"
-    },
-    {
-      "name": "Felicia Mcneil",
-      "email": "vuhixiju@mailinator.com"
-    },
-    {
-      "name": "Felicia Mcneil",
-      "email": "vuhixiju@mailinator.com"
     }
   ]
 }
