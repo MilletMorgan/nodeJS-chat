@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const dbPath = './db.json';
 
-let state = { "rooms": [], "users": [] };
+let state = { "rooms": [], "users": [], "usersOnline": [] };
 let isDBLoaded = false;
 
 function setState(newState) {

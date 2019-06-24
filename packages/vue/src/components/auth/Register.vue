@@ -97,7 +97,7 @@
                         email: this.email,
                         password: this.password
                     }).then(response => {
-                        console.log(response);
+                        //console.log(response);
                         this.success = 'Vous êtes inscrit avec succès !';
                     })
                         .catch(error => console.log(error));

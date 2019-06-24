@@ -6,21 +6,10 @@ const passport = require('passport/lib');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 
-const Authentication = (app, db, saveDB) => {
-    passport.use(new LocalStrategy(
-        { usernameField: 'email' },
-        (email, password, done) => {
-            db.users.forEach((user) => {
-                if (email === user.email) {
-                    if (!user) return done(null, false, { message: 'Invalid credentials.\n' });
-                    if (!bcrypt.compareSync(password, user.password))
-                        return done(null, false, { message: 'Invalid credentials.\n' });
+const { addUser, getUserForLogin } = require("./db/usersRepository");
 
-                    return done(null, user);
-                }
-            });
-        }
-    ));
+const Authentication = (app, db) => {
+    getUserForLogin();
 
     passport.serializeUser((user, done) => done(null, user.id));
 
@@ -33,7 +22,7 @@ const Authentication = (app, db, saveDB) => {
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
     app.use(session({
-        genid: (req) => {
+        genid: () => {
             return uuid();
         },
         store: new FileStore(),
@@ -67,20 +56,10 @@ const Authentication = (app, db, saveDB) => {
         res.redirect('/');
     });
 
-    app.get('/api/register', (req, res, next) => res.send("/register"));
-
     app.post('/api/register', (req, res) => {
         const { name, email, password } = req.body;
-        let getLastId = db.users[db.users.length - 1].id;
-        let id = getLastId + 1;
-
-        bcrypt.hash(password, 10, function (err, password) {
-            console.log({ id, name, email, password });
-            db.users.push({ id, name, email, password });
-            res.json({ name, email });
-            saveDB();
-            console.log(db)
-        });
+        addUser({ name, email, password });
+        res.json({ name, email });
     });
 
     app.get('/api/authrequired', (req, res) => res.send(req.user) ? req.isAuthenticated() : res.redirect('/'));

@@ -62,16 +62,12 @@
                             <button class="btn btn-primary" @click="switchGlobalRoom">Switch to global room</button>
 
                             <ul class="list-group list-group-flush">
-                                <li v-for="user in usersOnline"
-                                    :key="user"
+                                <li
+                                    v-for="({userName}, index) in usersOnline"
+                                    :key="index"
                                     class="list-group-item wow animated fadeInUp"
                                 >
-                                    <button type="submit"
-                                            @click="roomWithUser"
-                                            class="messages bg-info text-light"
-                                    >
-                                        <span>{{user}}</span>
-                                    </button>
+                                    {{ userName }}
                                 </li>
                             </ul>
 
@@ -119,11 +115,6 @@
                 return this.$store.state.user;
             }
         },
-        created() {
-            this.socket.on('typing', (data) => {
-                this.typing = data;
-            });
-        },
         watch: {
             currentContent: function () {
                 if (this.currentContent) {
@@ -152,13 +143,16 @@
             },
             connect() {
                 this.socket = io('/', { path: '/api/socket' });
-                this.socket.emit('room', this.actualRoom);
                 this.socket.emit('NEW_USER', this.user.name);
-                this.socket.on('MESSAGE', this.addMessage);
-                this.socket.on('MESSAGES', (data) => {
-                    this.messages = data;
+                console.log("New user : " + this.user.name);
+
+                this.socket.on('MESSAGES', (messages) => {
+                    this.messages = messages;
                 });
-                this.socket.on('USERS', (users) => this.usersOnline = users);
+                this.socket.emit('room', this.actualRoom);
+                this.socket.on('MESSAGE', this.addMessage);
+                //this.socket.on('USERS', (users) => this.usersOnline = users);
+                this.socket.on('GET_USERSONLINE', (usersOnline) => this.usersOnline = usersOnline);
                 this.dateToday = new Date().getDate();
                 // console.log("objet message : " + this.messages[0].author);
             },
@@ -170,7 +164,6 @@
                 let newsroom = "newsroom";
                 this.socket.emit('switchRoom', this.actualRoom, newsroom);
                 this.actualRoom = newsroom;
-                console.log("Switch room to " + this.actualRoom)
             },
             switchGlobalRoom() {
                 let newsroom = "globalRoom";
@@ -181,7 +174,6 @@
             roomWithUser() {
                 let room = this.userRoom;
                 this.actualRoom = room;
-                console.log("room : " + room);
                 this.socket.emit('switchRoom', room);
             }
         },
