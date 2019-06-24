@@ -3,9 +3,8 @@ const uuid = require('uuid/v4');
 const FileStore = require('session-file-store')(session);
 const bodyParser = require('body-parser');
 const passport = require('passport/lib');
-const LocalStrategy = require('passport-local').Strategy;
-const bcrypt = require('bcrypt');
 
+const { addUserOnline } = require('./db/usersOnlineRepository');
 const { addUser, getUserForLogin } = require("./db/usersRepository");
 
 const Authentication = (app, db) => {
@@ -38,14 +37,13 @@ const Authentication = (app, db) => {
     });
 
     app.post('/api/login', (req, res, next) => {
-        console.log("TEST Login 2");
         passport.authenticate('local', (err, user, info) => {
             if (info) return res.send(info.message);
             if (err) return next(err);
             if (!user) return res.redirect('/login');
             req.login(user, (err) => {
                 if (err) return next(err);
-                console.log("TEST Login 1");
+                addUserOnline(user.name, user.timestamp);
                 return res.redirect('/api/authrequired');
             });
         })(req, res, next);

@@ -1,15 +1,13 @@
 //*********************//
 // APP tChat SOCKET.IO //
 //*********************//
-const Models = require('./models.js');
 const { addMessage, getMessages } = require("./db/messagesRepository");
 const { addUserOnline, getUsersOnline, removeUserOnline } = require('./db/usersOnlineRepository');
 
 const Chat = (server) => {
     const io = require('socket.io')(server, { path: '/api/socket' });
-    let usersOnline = [];
 
-    const getUsersNames = () => [...new Set(usersOnline.map(user => user.name))];
+    const getUsersNames = () => [...new Set(getUsersOnline().map(user => user.name))];
     //const getUsersRooms = () => [...new Set(db.messages.map(user => user.room))];
 
     io.on('connection', socket => {
@@ -36,25 +34,31 @@ const Chat = (server) => {
             io.emit('MESSAGE', message);
         };
 
-        const saveNewUserOnline = (userName, timestamp) => {
-            addUserOnline(userName, timestamp);
-            //io.emit('USERSONLINE', userName);
-        };
-
+        io.emit('USERS_ONLINE', getUsersOnline());
         socket.emit('MESSAGES', getMessages());
-
-        //socket.to(currentRoom).emit('ALLUSERS', db.users);
 
         socket.on('SEND_MESSAGE', saveNewMessage);
 
-        socket.emit('GET_USERSONLINE',
-            getUsersOnline(),
-            console.log("getUsersOnline : " + getUsersOnline())
-        );
+
+        //const saveNewUserOnline = (userName, timestamp) => {
+            //addUserOnline(userName, timestamp);
+            //io.emit('USERSONLINE', userName);
+        //};
+
+
+
+        //socket.to(currentRoom).emit('ALLUSERS', db.users);
+
+
+
 
         socket.on('NEW_USER', (userName) => {
             //console.log("new user : " + userName);
             currentUser = { name: userName, timestamp: Date.now() };
+            console.log(currentUser.name);
+
+
+            //console.log(currentUser);
 
             if (!getUsersNames().includes(currentUser.name)) {
                 saveNewMessage({
@@ -72,16 +76,18 @@ const Chat = (server) => {
             //usersOnline.push(currentUser);
             //console.log("Usersonline : " + usersOnline);
 
-            socket.emit('USERS', getUsersOnline());
-            saveNewUserOnline(currentUser.name, currentUser.timestamp);
+            //socket.emit('USERS', getUsersOnline());
+            //saveNewUserOnline(currentUser.name, currentUser.timestamp);
         });
 
         const disconnectUser = () => {
             //console.log(`${currentUser.name} got disconnect!`);
             //usersOnline = usersOnline.filter(user => user !== currentUser);
 
-            removeUserOnline(currentUser.name, currentUser.timestamp);
-            socket.emit('USERS', getUsersOnline());
+            //console.log("disconnect user : " + currentUser.name + currentUser.timestamp);
+
+            removeUserOnline(currentUser.timestamp);
+            io.emit('USERS_ONLINE', getUsersOnline());
 
             if (!getUsersNames().includes(currentUser.name)) {
                 saveNewMessage({

@@ -30,7 +30,7 @@
                                         <span class="message-hour">
                                     <span v-if="( date !== dateToday )"> | Le </span>
                                     <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
-                                        {{ `${date}/${month}/${year} - ${hour}h${minute} `}}
+                                        {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
                                     </span>
                                         <br>
                                         <span>{{ content }}</span>
@@ -63,9 +63,9 @@
 
                             <ul class="list-group list-group-flush">
                                 <li
-                                    v-for="({userName}, index) in usersOnline"
-                                    :key="index"
-                                    class="list-group-item wow animated fadeInUp"
+                                        v-for="({userName}, index) in usersOnline"
+                                        :key="index"
+                                        class="list-group-item wow animated fadeInUp"
                                 >
                                     {{ userName }}
                                 </li>
@@ -149,17 +149,20 @@
                 this.socket.on('MESSAGES', (messages) => {
                     this.messages = messages;
                 });
+                this.socket.on('USERS_ONLINE', (usersonline) => {
+                    this.usersOnline = usersonline;
+                });
                 this.socket.emit('room', this.actualRoom);
                 this.socket.on('MESSAGE', this.addMessage);
-                //this.socket.on('USERS', (users) => this.usersOnline = users);
-                this.socket.on('GET_USERSONLINE', (usersOnline) => this.usersOnline = usersOnline);
                 this.dateToday = new Date().getDate();
                 // console.log("objet message : " + this.messages[0].author);
             },
             addMessage(message) {
                 this.messages = [...this.messages, message];
             },
-
+            newUser(usersOnline){
+                this.usersOnline = [...this.usersOnline, usersOnline]
+            },
             switchRoom() {
                 let newsroom = "newsroom";
                 this.socket.emit('switchRoom', this.actualRoom, newsroom);

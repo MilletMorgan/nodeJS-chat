@@ -1,203 +1,34 @@
 {
-  "rooms": [
-    {
-      "messages": [
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan Millet s'est connecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 12,
-          "minute": 20
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Test s'est connecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 12,
-          "minute": 20
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan Millet s'est connecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 12,
-          "minute": 21
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan Millet s'est connecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 12,
-          "minute": 22
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan Millet s'est connecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 12,
-          "minute": 25
-        },
-        {
-          "author": "Test",
-          "content": "zer",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 12,
-          "minute": 25
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 13,
-          "minute": 49
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan Millet s'est connecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 13,
-          "minute": 55
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 13,
-          "minute": 57
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 13,
-          "minute": 57
-        }
-      ]
-    },
-    {
-      "name": "globalRoom",
-      "messages": [
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan Millet s'est déconnecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 12,
-          "minute": 20
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan Millet s'est déconnecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 12,
-          "minute": 21
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan Millet s'est déconnecté !",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 12,
-          "minute": 22
-        },
-        {
-          "author": "Morgan Millet",
-          "content": "ze",
-          "date": 24,
-          "month": 5,
-          "year": 2019,
-          "hour": 12,
-          "minute": 25
-        }
-      ]
-    }
-  ],
+  "rooms": [],
   "users": [
     {
       "id": 0,
-      "name": "Morgan Millet",
-      "email": "millet.morgan5@gmail.com",
-      "password": "$2b$10$3e4uU9/ld8Sp/b5gkcTCXukhztziFjFgu2JOSPe2Efh.NlnYoxaae"
+      "timestamp": 1561387924527,
+      "name": "Rahim Vazquez",
+      "email": "rihexyz@mailinator.com",
+      "password": "$2b$10$c6o7i/P9WF9ITAJ1/LpNcuCHYz7gNzUmKgdEA/Jw2CMbf0rfBVX5O"
     },
     {
       "id": 1,
-      "name": "Test",
-      "email": "test@test.com",
-      "password": "$2b$10$VXXov2ikthG/RA9DGpUSMuqSib/It1TFAUcDHdu8ktSDro0bdIp7."
+      "timestamp": 1561388136468,
+      "name": "Morgan",
+      "email": "millet.morgan5@gmail.com",
+      "password": "$2b$10$elZCHDOJUrw9zQ5urzpN7u8Dtw9UyvJuKVQ4xqGxTtXy.A8kXPbHe"
     },
     {
       "id": 2,
-      "name": "Jelani Hamilton",
-      "email": "weqegy@mailinator.net",
-      "password": "$2b$10$8JsODFiewY2ez0efCIeWsucUcbOZ0FyouAF2wbK68aieQbesdNOjq"
+      "timestamp": 1561390413743,
+      "name": "Chase Keller",
+      "email": "vuhixiju@mailinator.com",
+      "password": "$2b$10$Aw2CnmVFp6Sd4pH2MSpGQe547nqBPe3jhoz/t57MKshs1Mcgs35Ra"
     },
     {
       "id": 3,
-      "name": "Jelani Hamilton",
-      "email": "weqegy@mailinator.net",
-      "password": "$2b$10$xRuXOrKy37fVqpOdkPUQ/.0HDHL7E/0.qgONGHhCAymRt6BLVo7HC"
-    },
-    {
-      "id": 4,
-      "name": "Yuri Best",
-      "email": "cofuky@mailinator.com",
-      "password": "$2b$10$bYmlLr6HaK/ECraqSk.Bj.71qOsjvqQN9ZsHiaknDQ65d31w.QMvG"
-    },
-    {
-      "id": 5,
-      "name": "Macy Phillips",
-      "email": "fuhuvo@mailinator.com",
-      "password": "$2b$10$wbInOHkiSQ50EuUx2gB6D..oBj1QJ51xgTbqHpoYItgg6RPnvssim"
+      "timestamp": 1561391092746,
+      "name": "test",
+      "email": "test@test.com",
+      "password": "$2b$10$kw6g0lfCF6Na97hRAYU8uOpuxJS2WMrODJclxCcj.nFI4yQeqITMW"
     }
   ],
-  "usersOnline": [
-    {
-      "timestamp": 1561371639941,
-      "userName": "Morgan Millet"
-    },
-    {
-      "timestamp": 1561371644995,
-      "userName": "Test"
-    },
-    {
-      "timestamp": 1561371667058,
-      "userName": "Morgan Millet"
-    },
-    {
-      "timestamp": 1561371732363,
-      "userName": "Morgan Millet"
-    },
-    {
-      "timestamp": 1561371936188,
-      "userName": "Morgan Millet"
-    },
-    {
-      "timestamp": 1561377332571,
-      "userName": "Morgan Millet"
-    }
-  ]
+  "usersOnline": []
 }

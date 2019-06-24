@@ -4,6 +4,8 @@ const {
     saveDB
 } = require('./db');
 
+const { getUserTimestamp } = require('./usersOnlineRepository');
+
 function addUserOnline(userName, timestamp) {
     const usersOnline = getState().usersOnline;
 
@@ -17,17 +19,22 @@ function addUserOnline(userName, timestamp) {
 function getUsersOnline() {
     const usersOnline = getState().usersOnline;
 
+    //console.log(usersOnline);
+
     return usersOnline;
 }
 
-function removeUserOnline(userName, timestampUser) {
+function removeUserOnline(timestamp) {
     const usersOnline = getState().usersOnline;
-    let userIndex = usersOnline.findIndex(({ timestamp }) => timestamp === timestampUser);
+    usersOnline.forEach((user, index) => {
+        if (timestamp === timestamp) {
 
-    delete usersOnline[userIndex];
+            usersOnline.splice(index, 1);
 
-    //usersOnline.filter(user => user !== userName);
-    //console.log(usersOnline);
+            setState({ usersOnline });
+            saveDB();
+        }
+    });
 
     return usersOnline;
 }
