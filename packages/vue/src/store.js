@@ -16,13 +16,13 @@ export default new Vuex.Store({
         async logUser({ commit }, { email, password }) {
             const { data: user } = await axios.post('/api/login', { email, password });
 
-            commit('setUser', { email: user.email, name: user.name, id: user.id });
+            commit('setUser', { id: user.id, timestamp: user.timestamp, email: user.email, name: user.name });
         },
 
         async retrieveUser({ commit }) {
             const { data: user } = await axios.get('/api/login');
 
-            commit('setUser', { email: user.email, name: user.name, id: user.id });
+            commit('setUser', { id: user.id, timestamp: user.timestamp, email: user.email, name: user.name });
         },
     },
 });

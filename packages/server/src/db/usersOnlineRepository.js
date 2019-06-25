@@ -26,9 +26,12 @@ function getUsersOnline() {
 
 function removeUserOnline(timestamp) {
     const usersOnline = getState().usersOnline;
+    console.log(timestamp);
     usersOnline.forEach((user, index) => {
-        if (timestamp === timestamp) {
-
+        console.log("foreach : " + user.timestamp);
+        if (timestamp === user.timestamp) {
+            console.log("timestamp : " + timestamp);
+            console.log("user.timestamp : " + user.timestamp);
             usersOnline.splice(index, 1);
 
             setState({ usersOnline });

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="442a6830-e5d7-455c-bcab-da33f1aba16c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/mmillet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/mmillet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/server/src/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/src/authentication.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/server/src/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/src/chat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/server/src/db/usersOnlineRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/src/db/usersOnlineRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/server/src/db/usersRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/src/db/usersRepository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/vue/src/components/Chat.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/components/Chat.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/vue/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vue/src/store.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +25,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/packages/server/src/authentication.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="327">
-                  <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+                <state relative-caret-position="408">
+                  <caret line="51" column="39" lean-forward="true" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
@@ -35,8 +34,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/packages/server/src/chat.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="394">
-                  <caret line="84" column="45" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
+                <state relative-caret-position="265">
+                  <caret line="47" column="47" lean-forward="true" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -45,10 +44,22 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/packages/vue/src/store.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="296">
+                  <caret line="18" column="70" lean-forward="true" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="70" />
+                  <folding>
+                    <element signature="e#0#24#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/packages/server/src/db/usersOnlineRepository.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="314">
-                  <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+                <state relative-caret-position="33">
+                  <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -57,14 +68,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/packages/vue/src/components/Chat.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="426">
-                  <caret line="153" column="19" selection-start-line="153" selection-start-column="19" selection-end-line="153" selection-end-column="19" />
-                  <folding>
-                    <element signature="e#5151#5185#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="358">
+                  <caret line="139" column="19" lean-forward="true" selection-start-line="139" selection-start-column="19" selection-end-line="139" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -72,17 +80,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/packages/server/src/db/usersRepository.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="508">
-                  <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+                <state relative-caret-position="978">
+                  <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/packages/server/db.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="373">
-                  <caret line="301" column="5" lean-forward="true" selection-start-line="301" selection-start-column="5" selection-end-line="301" selection-end-column="5" />
+                <state relative-caret-position="1010">
+                  <caret line="337" column="18" selection-start-line="337" selection-start-column="18" selection-end-line="337" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -103,9 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>MESSAGES</find>
-      <find>.to</find>
-      <find>addMe</find>
       <find>getMes</find>
       <find>messages</find>
       <find>pus</find>
@@ -125,7 +130,6 @@
       <find>console.log</find>
       <find>conso</find>
       <find>console</find>
-      <find>add</find>
       <find>currentUser =</find>
       <find>usersO</find>
       <find>curre</find>
@@ -133,6 +137,10 @@
       <find>remo</find>
       <find>currentUser</find>
       <find>userName</find>
+      <find>timest</find>
+      <find>times</find>
+      <find>add</find>
+      <find>time</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -177,7 +185,6 @@
         <option value="$PROJECT_DIR$/packages/vue/public/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/packages/server/src/db.json" />
-        <option value="$PROJECT_DIR$/packages/vue/src/store.js" />
         <option value="$PROJECT_DIR$/packages/vue/src/assets/style.css" />
         <option value="$PROJECT_DIR$/packages/vue/src/App.vue" />
         <option value="$PROJECT_DIR$/packages/server/src/server.js" />
@@ -186,18 +193,21 @@
         <option value="$PROJECT_DIR$/packages/server/src/db/messagesRepository.js" />
         <option value="$PROJECT_DIR$/packages/vue/src/components/auth/Register.vue" />
         <option value="$PROJECT_DIR$/packages/vue/src/components/auth/Login.vue" />
-        <option value="$PROJECT_DIR$/packages/vue/src/components/Chat.vue" />
-        <option value="$PROJECT_DIR$/packages/server/src/authentication.js" />
         <option value="$PROJECT_DIR$/packages/server/src/db/usersRepository.js" />
         <option value="$PROJECT_DIR$/packages/server/db.json" />
         <option value="$PROJECT_DIR$/packages/server/src/db/usersOnlineRepository.js" />
+        <option value="$PROJECT_DIR$/packages/server/src/authentication.js" />
+        <option value="$PROJECT_DIR$/packages/vue/src/store.js" />
+        <option value="$PROJECT_DIR$/packages/vue/src/components/Chat.vue" />
         <option value="$PROJECT_DIR$/packages/server/src/chat.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-217" />
+    <option name="y" value="-1080" />
     <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -207,6 +217,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,7 +300,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -423,12 +433,13 @@
       <workItem from="1560426931775" duration="12585000" />
       <workItem from="1560677380735" duration="18005000" />
       <workItem from="1561019687677" duration="39267000" />
-      <workItem from="1561364855212" duration="20903000" />
+      <workItem from="1561364855212" duration="21285000" />
+      <workItem from="1561454379278" duration="1956000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="334132000" />
+    <option name="totallyTimeSpent" value="336470000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -440,16 +451,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="-217" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4526316" visible="true" weight="0.14691943" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.45156482" visible="true" weight="0.14691943" />
       <window_info id="Structure" order="1" sideWeight="0.30966768" side_tool="true" weight="0.13638757" />
-      <window_info id="npm" order="2" sideWeight="0.5473684" side_tool="true" weight="0.14691943" />
+      <window_info id="npm" order="2" sideWeight="0.54843515" side_tool="true" weight="0.14691943" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3280098" />
-      <window_info active="true" anchor="bottom" x="10" y="494" width="1899" height="212" id="Run" order="2" visible="true" weight="0.3249551" />
+      <window_info anchor="bottom" x="10" y="494" width="1899" height="212" id="Run" order="2" visible="true" weight="0.3249497" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39856374" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -457,7 +468,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32923833" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32944345" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32897383" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -692,16 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/vue/src/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/server/src/db/db.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-114">
@@ -730,23 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/vue/src/components/Chat.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="153" column="19" selection-start-line="153" selection-start-column="19" selection-end-line="153" selection-end-column="19" />
-          <folding>
-            <element signature="e#5151#5185#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/src/authentication.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/server/src/models.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -756,32 +740,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/server/src/db/usersRepository.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        <state relative-caret-position="978">
+          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/server/src/db/usersOnlineRepository.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="33">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/server/src/authentication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="51" column="39" lean-forward="true" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/server/db.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1010">
+          <caret line="337" column="18" selection-start-line="337" selection-start-column="18" selection-end-line="337" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/vue/src/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="18" column="70" lean-forward="true" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/server/src/chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="84" column="45" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
+        <state relative-caret-position="265">
+          <caret line="47" column="47" lean-forward="true" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/server/db.json">
+    <entry file="file://$PROJECT_DIR$/packages/vue/src/components/Chat.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="301" column="5" lean-forward="true" selection-start-line="301" selection-start-column="5" selection-end-line="301" selection-end-column="5" />
+        <state relative-caret-position="358">
+          <caret line="139" column="19" lean-forward="true" selection-start-line="139" selection-start-column="19" selection-end-line="139" selection-end-column="19" />
         </state>
       </provider>
     </entry>

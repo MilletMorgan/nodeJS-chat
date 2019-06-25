@@ -28,6 +28,13 @@
       "name": "test",
       "email": "test@test.com",
       "password": "$2b$10$kw6g0lfCF6Na97hRAYU8uOpuxJS2WMrODJclxCcj.nFI4yQeqITMW"
+    },
+    {
+      "id": 4,
+      "timestamp": 1561454647324,
+      "name": "Gillian Glover",
+      "email": "buwoxadu@mailinator.net",
+      "password": "$2b$10$65q8URgCXf86l28eRJ7JROyhb9CystmOud4u3NngUNMvoF.NiTHtO"
     }
   ],
   "usersOnline": []

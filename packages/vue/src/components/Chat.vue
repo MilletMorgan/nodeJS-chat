@@ -143,7 +143,7 @@
             },
             connect() {
                 this.socket = io('/', { path: '/api/socket' });
-                this.socket.emit('NEW_USER', this.user.name);
+                this.socket.emit('NEW_USER', this.user.name, this.user.timestamp);
                 console.log("New user : " + this.user.name);
 
                 this.socket.on('MESSAGES', (messages) => {
