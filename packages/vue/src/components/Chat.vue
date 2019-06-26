@@ -82,7 +82,16 @@
                     <div class="col-md-10">
                         <input v-model="currentContent" class="form-control" id="message"/>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-1">
+                        <div v-if="!image">
+                            <p>Select an image</p>
+                            <input type="file" @change="onFileChange">
+                        </div>
+                        <div v-else>
+                            <img :src="image" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
                         <button type="submit" class="btn btn-outline-success">Envoyer</button>
                     </div>
                 </div>
@@ -107,7 +116,9 @@
                 currentContent: null,
                 dateToday: null,
                 socket: null,
-                actualRoom: "globalRoom"
+                actualRoom: "globalRoom",
+                image: '',
+                file: null
             };
         },
         computed: {
@@ -136,15 +147,16 @@
                     month: new Date().getMonth(),
                     year: new Date().getFullYear(),
                     hour: new Date().getHours(),
-                    minute: new Date().getMinutes()
+                    minute: new Date().getMinutes(),
+                    image: this.file
                 });
 
                 this.currentContent = '';
             },
             connect() {
                 this.socket = io('/', { path: '/api/socket' });
+                this.socket.emit('room', this.actualRoom);
                 this.socket.emit('NEW_USER', this.user.name, this.user.timestamp);
-                console.log("New user : " + this.user.name);
 
                 this.socket.on('MESSAGES', (messages) => {
                     this.messages = messages;
@@ -152,10 +164,9 @@
                 this.socket.on('USERS_ONLINE', (usersonline) => {
                     this.usersOnline = usersonline;
                 });
-                this.socket.emit('room', this.actualRoom);
+
                 this.socket.on('MESSAGE', this.addMessage);
                 this.dateToday = new Date().getDate();
-                // console.log("objet message : " + this.messages[0].author);
             },
             addMessage(message) {
                 this.messages = [...this.messages, message];
@@ -164,16 +175,34 @@
                 this.usersOnline = [...this.usersOnline, usersOnline]
             },
             switchRoom() {
+                //this.messages = [];
                 let newsroom = "newsroom";
                 this.socket.emit('switchRoom', this.actualRoom, newsroom);
                 this.actualRoom = newsroom;
             },
             switchGlobalRoom() {
+                //this.messages = [];
                 let newsroom = "globalRoom";
                 this.socket.emit('switchRoom', this.actualRoom, newsroom);
                 this.actualRoom = newsroom;
             },
+            onFileChange(e) {
+                const files = e.target.files || e.dataTransfer.files;
+                if (!files.length)
+                    return;
+                this.createImage(files[0]);
+                this.file = files[0];
+            },
+            createImage(file) {
+                this.image = new Image();
+                const reader = new FileReader();
+                const vm = this;
 
+                reader.onload = (e) => {
+                    vm.image = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            },
             roomWithUser() {
                 let room = this.userRoom;
                 this.actualRoom = room;

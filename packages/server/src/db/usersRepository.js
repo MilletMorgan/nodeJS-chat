@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt');
 const passport = require('passport/lib');
 const LocalStrategy = require('passport-local').Strategy;
-const { addUserOnline } = require('./usersOnlineRepository');
 
 const {
     getState,
@@ -46,7 +45,26 @@ function getUserForLogin() {
     ));
 }
 
+function getUser(timestamp) {
+    const users = getState().users;
+    let user = null;
+
+    users.forEach((user, index) => {
+        if (timestamp === user.timestamp) return users[index];
+    });
+
+    return user;
+}
+
+function getAllUsers() {
+    const users = getState().users;
+
+    return users;
+}
+
 module.exports = {
     addUser,
-    getUserForLogin
+    getUserForLogin,
+    getAllUsers,
+    getUser
 };

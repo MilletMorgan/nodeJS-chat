@@ -23,8 +23,7 @@
 </template>
 
 <script>
-    import io from 'socket.io-client';
-    //import axios from 'axios';
+    import Axios from 'axios';
 
     export default {
         data() {
@@ -35,11 +34,7 @@
         },
         methods: {},
         mounted: function () {
-            this.socket = io('/', { path: '/api/socket' });
-
-            this.socket.on('USERS', (data) => {
-                this.users = data;
-            });
+            Axios.get('/api/user').then(response => this.users = response).catch(error => console.log(error));
         },
 
         computed: {

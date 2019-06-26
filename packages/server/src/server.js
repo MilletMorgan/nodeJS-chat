@@ -2,6 +2,7 @@
 
 const Chat = require('./chat.js');
 const Authentication = require('./authentication.js');
+const Models = require('./models');
 
 const express = require('express');
 const fs = require('fs');
@@ -44,6 +45,7 @@ router.get('/users', (req, res) => res.json(db.users));
 try {
     Authentication(app, db, saveDB);
     Chat(server, db, saveDB);
+    Models(app);
 } catch (e) {
     console.error(e);
 }

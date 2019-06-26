@@ -1,5 +1,15 @@
+const { getAllUsers, getUser } = require('./db/usersRepository');
+
+const Models = (app) => {
+    app.get('/api/admin', (req, res) => res.send(getAllUsers()));
+
+    app.get('/api/user', (req, res) => res.send(getUser()));
+};
+
+module.exports = Models;
+
 /**
-const findRoom = (db, actualRoom) => {
+ const findRoom = (db, actualRoom) => {
     db.rooms.forEach((room) => {
         console.log("actual room : " + actualRoom);
 
@@ -16,13 +26,13 @@ const findRoom = (db, actualRoom) => {
 
 
 
-function saveNewMessage()
+ function saveNewMessage()
 
 
 
 
 
-const db = {
+ const db = {
     state: { "rooms": [], "users": [] },
 
 

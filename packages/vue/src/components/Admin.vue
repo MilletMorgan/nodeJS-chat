@@ -12,8 +12,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="({ id, name, email }, index) in users" :key="index" :class="{selected: index.selected}"
-                    @click="select(index)">
+                <tr v-for="({ id, name, email }, index) in allUsers.data" :key="index">
                     <th scope="row"><span ref="{id}}">{{ id }}</span></th>
                     <td>{{ name }}</td>
                     <td>{{ email }}</td>
@@ -28,7 +27,7 @@
 </template>
 
 <script>
-    import io from 'socket.io-client';
+    import Axios from 'axios';
 
     export default {
         data() {
@@ -36,7 +35,8 @@
                 user: null,
                 users: [],
                 socket: null,
-                id: null
+                id: null,
+                allUsers: []
             };
         },
         methods: {
@@ -52,9 +52,7 @@
             }
         },
         mounted: function () {
-            this.socket = io('/', { path: '/api/socket' });
-
-            this.socket.on('ALLUSERS', (data) => this.users = data);
+            Axios.get('/api/admin').then(response => this.allUsers = response).catch(error => console.log(error));
         }
     };
 </script>

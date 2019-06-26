@@ -2,6 +2,7 @@
   <dictionary name="mmillet">
     <words>
       <w>authrequired</w>
+      <w>axios</w>
       <w>bcrypt</w>
       <w>usersonline</w>
     </words>
