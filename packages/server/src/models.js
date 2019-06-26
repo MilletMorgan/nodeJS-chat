@@ -1,9 +1,14 @@
-const { getAllUsers, getUser } = require('./db/usersRepository');
+const { getAllUsers, getUser, deleteUser } = require('./db/usersRepository');
 
 const Models = (app) => {
     app.get('/api/admin', (req, res) => res.send(getAllUsers()));
 
     app.get('/api/user', (req, res) => res.send(getUser()));
+
+    app.post('/api/deleteUser', (req, res) => {
+        deleteUser(req.body.timestamp);
+        res.send(getAllUsers());
+    })
 };
 
 module.exports = Models;

@@ -4,6 +4,8 @@
       <w>authrequired</w>
       <w>axios</w>
       <w>bcrypt</w>
+      <w>newroom</w>
+      <w>useronline</w>
       <w>usersonline</w>
     </words>
   </dictionary>

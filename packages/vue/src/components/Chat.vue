@@ -1,7 +1,7 @@
 <template>
     <div class="chat">
         <div class="header text-light">
-            <h3><span>@{{ user.name }}</span></h3>
+            <h3 class="wow animated fadeIn"><span>@{{ user.name }}</span></h3>
         </div>
         <div class="content" id="content">
             <div v-if="socket">
@@ -19,7 +19,7 @@
                                         <span class="message-hour">
                                     <span v-if="( date !== dateToday )"> | Le </span>
                                     <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
-                                        {{ `${date}/${month}/${year} - ${hour}h${minute} `}}
+                                        {{ `${date}/${month}/${year} - ${hour}h${minute} | ${actualRoom} `}}
                                     </span>
                                         <br>
                                         <span>{{ content }}</span>
@@ -30,7 +30,7 @@
                                         <span class="message-hour">
                                     <span v-if="( date !== dateToday )"> | Le </span>
                                     <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
-                                        {{ `${date}/${month}/${year} - ${hour}h${minute}` }}
+                                        {{ `${date}/${month}/${year} - ${hour}h${minute} | ${actualRoom} `}}
                                     </span>
                                         <br>
                                         <span>{{ content }}</span>
@@ -38,6 +38,24 @@
                                     <div v-else-if="author === user.name"
                                          class="messageUser animated fadeInUp">
                                         <span class="font-weight-bold">{{ author }}</span>
+                                        <span class="message-hour">
+                                    <span v-if="( date !== dateToday )"> | Le </span>
+                                    <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
+                                        {{ `${date}/${month}/${year} - ${hour}h${minute} | ${actualRoom} `}}
+                                    </span>
+                                        <br>
+                                        <span>{{ content }}</span>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="messages"
+                                 v-for="({ author, content, date, month, year, hour, minute }, index) in messageBot"
+                                 :key="index"
+                            >
+                                <div>
+                                    <div class="messageBot animated fadeInUp">
+                                        <span class="font-weight-bold">🤖 {{ author }}</span>
                                         <span class="message-hour">
                                     <span v-if="( date !== dateToday )"> | Le </span>
                                     <span v-if="( date === dateToday )"> | Aujourd'hui, </span>
@@ -54,18 +72,20 @@
                     </div>
                     <div class="col-md-3 usersonline">
                         <div class="margin-box">
-                            <h4 class="text-light">{{ `${usersOnline.length} utilisateur(s) connecté(s)` }}</h4>
+                            <h4 class="text-light wow animated fadeIn">{{ `${usersOnline.length} utilisateur(s)
+                                connecté(s)` }}</h4>
                             <br>
 
-
-                            <button class="btn btn-primary" @click="switchRoom">Switch room</button>
-                            <button class="btn btn-primary" @click="switchGlobalRoom">Switch to global room</button>
+                            <button class="btn btn-primary wow animated fadeIn" @click="switchRoom">Switch room</button>
+                            <button class="btn btn-primary wow animated fadeIn" @click="switchGlobalRoom">Switch to
+                                global room
+                            </button>
 
                             <ul class="list-group list-group-flush">
                                 <li
-                                        v-for="({userName}, index) in usersOnline"
-                                        :key="index"
-                                        class="list-group-item wow animated fadeInUp"
+                                    v-for="({userName}, index) in usersOnline"
+                                    :key="index"
+                                    class="list-group-item wow animated fadeInUp"
                                 >
                                     {{ userName }}
                                 </li>
@@ -88,7 +108,7 @@
                             <input type="file" @change="onFileChange">
                         </div>
                         <div v-else>
-                            <img :src="image" />
+                            <img :src="image"/>
                         </div>
                     </div>
                     <div class="col-md-1">
@@ -112,6 +132,7 @@
             return {
                 messages: [],
                 usersOnline: [],
+                messageBot: [],
                 userRoom: null,
                 currentContent: null,
                 dateToday: null,
@@ -155,12 +176,15 @@
             },
             connect() {
                 this.socket = io('/', { path: '/api/socket' });
-                this.socket.emit('room', this.actualRoom);
+                //this.socket.emit('switchRoom', this.actualRoom, this.actualRoom);
+                //this.switchGlobalRoom();
                 this.socket.emit('NEW_USER', this.user.name, this.user.timestamp);
 
-                this.socket.on('MESSAGES', (messages) => {
+                this.socket.on('MESSAGES', (messages, messageBot) => {
                     this.messages = messages;
+                    this.messageBot = messageBot;
                 });
+
                 this.socket.on('USERS_ONLINE', (usersonline) => {
                     this.usersOnline = usersonline;
                 });
@@ -171,8 +195,8 @@
             addMessage(message) {
                 this.messages = [...this.messages, message];
             },
-            newUser(usersOnline){
-                this.usersOnline = [...this.usersOnline, usersOnline]
+            newUser(usersOnline) {
+                this.usersOnline = [...this.usersOnline, usersOnline];
             },
             switchRoom() {
                 //this.messages = [];

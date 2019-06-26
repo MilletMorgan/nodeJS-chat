@@ -1,12 +1,12 @@
 <template>
     <div class="col-md-6">
         <div class="element">
-            <h2>Connexion</h2>
-            <hr>
+            <h2 class=" wow animated fadeIn">Connexion</h2>
+            <hr class="wow animated fadeIn">
             <form class="login" @submit.prevent="login">
-                <label for="login-email">Email</label>
+                <label for="login-email" class=" wow animated fadeIn">Email</label>
                 <input
-                        class="form-control"
+                        class="form-control wow animated fadeIn"
                         required
                         v-model="email"
                         type="email"
@@ -16,9 +16,9 @@
                         autocomplete="email"
                 />
                 <br>
-                <label for="login-password">Mot de passe</label>
+                <label for="login-password" class=" wow animated fadeIn">Mot de passe</label>
                 <input
-                        class="form-control"
+                        class="form-control wow animated fadeIn"
                         required
                         v-model="password"
                         type="password"
@@ -27,15 +27,15 @@
                         id="login-password"
                         autocomplete="password"
                 />
-                <hr/>
-                <button type="submit" class="btn btn-outline-success button-login">
+                <hr class="wow animated fadeIn"/>
+                <button type="submit" class="btn btn-outline-success button-login wow animated fadeInUp">
                     Connexion
                 </button>
             </form>
 
             <br>
 
-            <div class="alert alert-danger" v-if="error">
+            <div class="alert alert-danger wow animated fadeIn" v-if="error">
                 {{ error }}
             </div>
         </div>
@@ -43,8 +43,6 @@
 </template>
 
 <script>
-    import io from 'socket.io-client';
-
     export default {
         data() {
             return {

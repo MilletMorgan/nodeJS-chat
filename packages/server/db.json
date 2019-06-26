@@ -1,198 +1,105 @@
 {
   "rooms": [
     {
-      "name": "room1",
+      "name": "globalRoom",
       "messages": [
         {
           "author": "ConnectionBot",
-          "content": "Connecter à la room : room1",
-          "date": 25,
+          "content": "Morgan s'est connecté !",
+          "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 15,
+          "hour": 17,
+          "minute": 58
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 17,
+          "minute": 58
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "null s'est déconnecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 17,
           "minute": 59
         },
         {
           "author": "ConnectionBot",
           "content": "Morgan s'est connecté !",
-          "date": 25,
+          "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 15,
+          "hour": 17,
           "minute": 59
         },
         {
-          "author": "Morgan",
-          "content": "bonjo",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 15,
-          "minute": 59,
-          "image": ""
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 2
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Connecter à la room : room1",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 2
-        },
-        {
           "author": "ConnectionBot",
           "content": "Morgan s'est connecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 2
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 2
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 2
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Connecter à la room : room1",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 2
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan s'est connecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 2
-        },
-        {
-          "author": "Morgan",
-          "content": "sdf",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 2
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 3
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Connecter à la room : room1",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 3
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan s'est connecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 3
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 3
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 3
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Connecter à la room : room1",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 3
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Morgan s'est connecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 3
-        },
-        {
-          "author": "Morgan",
-          "content": "sdf",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 16,
-          "minute": 3,
-          "image": null
-        },
-        {
-          "author": "Morgan",
-          "content": "sfd",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 17,
-          "minute": 36,
-          "image": null
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Connecter à la room : room1",
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
+          "hour": 17,
+          "minute": 59
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 0
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 0
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 1
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "null s'est déconnecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 1
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 1
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "null s'est déconnecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
           "minute": 2
         },
         {
@@ -201,26 +108,17 @@
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
+          "hour": 18,
           "minute": 2
         },
         {
           "author": "ConnectionBot",
-          "content": "Morgan s'est déconnecté !",
+          "content": "null s'est déconnecté !",
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 2
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "Connecter à la room : room1",
-          "date": 26,
-          "month": 5,
-          "year": 2019,
-          "hour": 11,
-          "minute": 2
+          "hour": 18,
+          "minute": 3
         },
         {
           "author": "ConnectionBot",
@@ -228,84 +126,26 @@
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 2
-        }
-      ]
-    },
-    {
-      "messages": [
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 17,
-          "minute": 30
+          "hour": 18,
+          "minute": 3
         },
         {
           "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 25,
+          "content": "Morgan s'est connecté !",
+          "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 17,
-          "minute": 30
+          "hour": 18,
+          "minute": 4
         },
         {
           "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 25,
+          "content": "Morgan s'est connecté !",
+          "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 17,
-          "minute": 30
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 17,
-          "minute": 30
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 17,
-          "minute": 30
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 17,
-          "minute": 30
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 17,
-          "minute": 30
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 25,
-          "month": 5,
-          "year": 2019,
-          "hour": 17,
-          "minute": 30
+          "hour": 18,
+          "minute": 5
         },
         {
           "author": "ConnectionBot",
@@ -313,16 +153,43 @@
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 2
+          "hour": 18,
+          "minute": 5
         },
         {
           "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
+          "content": "Morgan s'est connecté !",
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
+          "hour": 18,
+          "minute": 5
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 5
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 5
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
           "minute": 10
         },
         {
@@ -331,8 +198,26 @@
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 20
+          "hour": 18,
+          "minute": 10
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 10
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 10
         },
         {
           "author": "ConnectionBot",
@@ -340,8 +225,44 @@
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 20
+          "hour": 18,
+          "minute": 12
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 12
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est déconnecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 12
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 12
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 13
         },
         {
           "author": "ConnectionBot",
@@ -349,8 +270,17 @@
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 20
+          "hour": 18,
+          "minute": 13
+        },
+        {
+          "author": "ConnectionBot",
+          "content": "Morgan s'est connecté !",
+          "date": 26,
+          "month": 5,
+          "year": 2019,
+          "hour": 18,
+          "minute": 13
         },
         {
           "author": "ConnectionBot",
@@ -358,80 +288,53 @@
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 20
+          "hour": 18,
+          "minute": 13
         },
         {
           "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
+          "content": "Morgan s'est connecté !",
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 20
+          "hour": 18,
+          "minute": 13
         },
         {
           "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
+          "content": "Morgan s'est connecté !",
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 20
+          "hour": 18,
+          "minute": 15
         },
         {
           "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
+          "content": "Morgan s'est connecté !",
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 25
+          "hour": 18,
+          "minute": 16
         },
         {
           "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
+          "content": "Morgan s'est connecté !",
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 27
+          "hour": 18,
+          "minute": 16
         },
         {
           "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
+          "content": "Morgan s'est connecté !",
           "date": 26,
           "month": 5,
           "year": 2019,
-          "hour": 11,
-          "minute": 28
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 26,
-          "month": 5,
-          "year": 2019,
-          "hour": 11,
-          "minute": 28
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 26,
-          "month": 5,
-          "year": 2019,
-          "hour": 11,
-          "minute": 35
-        },
-        {
-          "author": "ConnectionBot",
-          "content": "null s'est déconnecté !",
-          "date": 26,
-          "month": 5,
-          "year": 2019,
-          "hour": 11,
-          "minute": 35
+          "hour": 18,
+          "minute": 17
         }
       ]
     }
@@ -452,13 +355,6 @@
       "password": "$2b$10$elZCHDOJUrw9zQ5urzpN7u8Dtw9UyvJuKVQ4xqGxTtXy.A8kXPbHe"
     },
     {
-      "id": 2,
-      "timestamp": 1561390413743,
-      "name": "Chase Keller",
-      "email": "vuhixiju@mailinator.com",
-      "password": "$2b$10$Aw2CnmVFp6Sd4pH2MSpGQe547nqBPe3jhoz/t57MKshs1Mcgs35Ra"
-    },
-    {
       "id": 3,
       "timestamp": 1561391092746,
       "name": "test",
@@ -467,11 +363,28 @@
     },
     {
       "id": 4,
-      "timestamp": 1561454647324,
-      "name": "Gillian Glover",
-      "email": "buwoxadu@mailinator.net",
-      "password": "$2b$10$65q8URgCXf86l28eRJ7JROyhb9CystmOud4u3NngUNMvoF.NiTHtO"
+      "timestamp": 1561548611538,
+      "name": "Jenette Best",
+      "email": "huhijuh@mailinator.com",
+      "password": "$2b$10$TCSmEuCU6aWOOR2gVvFREuUHeAiUWs9YIIbA7n15Lmz0/jDYOirVO"
+    },
+    {
+      "id": 5,
+      "timestamp": 1561548613833,
+      "name": "Madonna Hanson",
+      "email": "bigafy@mailinator.net",
+      "password": "$2b$10$e1dp30jqI6Iw65zaqDEdAuD9I6X30Poy6a.n/YV9gsgDlFWLufbBC"
     }
   ],
-  "usersOnline": []
+  "usersOnline": [
+    {
+      "room": "newsroom",
+      "useronline": [
+        {
+          "timestamp": 1561388136468,
+          "userName": "Morgan"
+        }
+      ]
+    }
+  ]
 }

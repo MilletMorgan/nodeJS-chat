@@ -1,8 +1,8 @@
 <template>
     <div class="card container">
         <div class="card-body">
-            <h2 class="card-title">Profile</h2>
-            <table class="table table-striped">
+            <h2 class="card-title wow animated fadeIn">Profile</h2>
+            <table class="table table-striped wow animated fadeIn">
                 <thead class="bg-primary text-light">
                 <tr>
                     <th scope="col">#</th>

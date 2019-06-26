@@ -1,8 +1,8 @@
 <template>
     <div class="card container">
         <div class="card-body">
-            <h2 class="card-title">Admin</h2>
-            <table class="table table-striped">
+            <h2 class="card-title wow animated fadeIn">Admin</h2>
+            <table class="table table-striped wow animated fadeIn">
                 <thead class="bg-primary text-light">
                 <tr>
                     <th scope="col">ID</th>
@@ -12,12 +12,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="({ id, name, email }, index) in allUsers.data" :key="index">
+                <tr v-for="({ id, name, email }, index) in allUsers.data"
+                    :key="index"
+                    :class="{selected: index.selected}"
+                    @click="deleteUser(index)"
+                >
                     <th scope="row"><span ref="{id}}">{{ id }}</span></th>
                     <td>{{ name }}</td>
                     <td>{{ email }}</td>
                     <td>
-                        <button @click="supprimer" type="button" class="btn btn-danger">SUPPRIMER</button>
+                        <button type="button" class="btn btn-danger">SUPPRIMER</button>
                     </td>
                 </tr>
                 </tbody>
@@ -28,6 +32,7 @@
 
 <script>
     import Axios from 'axios';
+    import io from 'socket.io-client';
 
     export default {
         data() {
@@ -40,19 +45,26 @@
             };
         },
         methods: {
-            supprimer(index) {
-                index.session = true;
-                const v = selectedUsers();
-                console.log();
+            deleteUser(index) {
+                console.log("delete : ", this.allUsers.data[index]);
+                Axios.post('/api/deleteUser', this.allUsers.data[index]).then(response => {
+                    console.log(response);
+                    this.allUsers.data.splice(index, 1);
+                }).catch(error => console.log(error));
+
+                this.socket = io('/', { path: '/api/socket' });
+            },
+            getUsers() {
+                this.socket.on('USERS', (users) => this.allUsers = users)
             }
         },
         computed: {
-            selectedUsers() {
-                return this.users.filter(index => index.selected);
-            }
         },
         mounted: function () {
             Axios.get('/api/admin').then(response => this.allUsers = response).catch(error => console.log(error));
+        },
+        beforeMount() {
+            this.getUsers();
         }
     };
 </script>

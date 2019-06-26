@@ -62,9 +62,25 @@ function getAllUsers() {
     return users;
 }
 
+function deleteUser(userTimestamp) {
+    const users = getState().users;
+
+    //console.log("User timestamp models : ", userTimestamp);
+
+    users.forEach((user, index) => {
+        if (userTimestamp === user.timestamp) {
+            users.splice(index, 1);
+
+            setState({ users });
+            saveDB();
+        }
+    });
+}
+
 module.exports = {
     addUser,
     getUserForLogin,
     getAllUsers,
-    getUser
+    getUser,
+    deleteUser
 };
