@@ -1,6 +1,6 @@
 <template>
     <div class="chat">
-        <div class="header text-light">
+        <div class="header">
             <h3 class="wow animated fadeIn"><span>@{{ user.name }}</span></h3>
         </div>
         <div class="content" id="content">
@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-md-3 usersonline">
                         <div class="margin-box">
-                            <h4 class="text-light wow animated fadeIn">{{ `${usersOnline.length} utilisateur(s)
+                            <h4 class="wow animated fadeIn">{{ `${usersOnline.length} utilisateur(s)
                                 connecté(s)` }}</h4>
                             <br>
 
@@ -83,11 +83,11 @@
 
                             <ul class="list-group list-group-flush">
                                 <li
-                                    v-for="({userName}, index) in usersOnline"
+                                    v-for="index in usersOnline"
                                     :key="index"
                                     class="list-group-item wow animated fadeInUp"
                                 >
-                                    {{ userName }}
+                                    {{ index }}
                                 </li>
                             </ul>
 
@@ -102,16 +102,7 @@
                     <div class="col-md-10">
                         <input v-model="currentContent" class="form-control" id="message"/>
                     </div>
-                    <div class="col-md-1">
-                        <div v-if="!image">
-                            <p>Select an image</p>
-                            <input type="file" @change="onFileChange">
-                        </div>
-                        <div v-else>
-                            <img :src="image"/>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <button type="submit" class="btn btn-outline-success">Envoyer</button>
                     </div>
                 </div>
@@ -186,7 +177,15 @@
                 });
 
                 this.socket.on('USERS_ONLINE', (usersonline) => {
-                    this.usersOnline = usersonline;
+
+                    usersonline.forEach((user) => {
+                        user.forEach((userName) => {
+                            this.usersOnline.push(userName.userName);
+                        })
+                    });
+                    //this.usersOnline = usersonline;
+
+
                 });
 
                 this.socket.on('MESSAGE', this.addMessage);

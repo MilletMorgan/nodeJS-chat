@@ -9,13 +9,17 @@ const Chat = (server) => {
 
 
     io.on('connection', socket => {
-        const getUsersNames = () => [...new Set(getUsersOnline(socket.room).map(user => user.useronline.name))];
-
         socket.room = 'globalRoom';
         socket.join(socket.room);
         let currentUser = { name: null, timestamp: null };
 
+        //const getUsersNames = () => [...new Set(getUsersOnline(socket.room).map(user => user.useronline[0].name))];
+
+        //console.log("getUsersNames : ", getUsersNames());
+        //console.log("getUsersOnline : ", gxetUsersOnline(socket.room));
+
         socket.on('switchRoom', (currentRoom, newsroom) => {
+            let allUsers = [];
             if (currentRoom !== newsroom) {
                 socket.leave(socket.room);
                 socket.join(newsroom);
@@ -23,6 +27,9 @@ const Chat = (server) => {
 
                 io.sockets.in(socket.room).emit('MESSAGES', getMessages(socket.room));
                 addRoomToUserOnline(currentUser.timestamp, socket.room);
+                allUsers = getUsersOnline(socket.room);
+                console.log("chat, getUsersOnline : ", allUsers);
+                io.emit('USERS_ONLINE', allUsers);
             }
 
             /*
@@ -42,14 +49,14 @@ const Chat = (server) => {
         });
 
         const saveNewMessage = (message) => {
-            console.log("save new message function");
+            //console.log("save new message function");
             addMessage(socket.room, message);
             io.emit('MESSAGE', message);
         };
 
         socket.broadcast.to(socket.room).on('SEND_MESSAGE', saveNewMessage);
 
-        io.emit('USERS_ONLINE', getUsersOnline(socket.room));
+        //io.emit('USERS_ONLINE', getUsersOnline(socket.room));
 
         //socket.broadcast.to('room2').emit('MESSAGES', getMessages(socket.room), console.log(socket.room));
 
@@ -58,6 +65,7 @@ const Chat = (server) => {
         socket.on('NEW_USER', (userName, timestamp) => {
             currentUser = { name: userName, timestamp: timestamp };
 
+            /*
             if (!getUsersNames().includes(currentUser.name)) {
                 saveNewMessage({
                     author: 'ConnectionBot',
@@ -69,14 +77,17 @@ const Chat = (server) => {
                     minute: new Date().getMinutes(),
                 });
             }
+
+             */
         });
 
         const disconnectUser = () => {
             removeUserOnline(currentUser.timestamp);
             io.emit('USERS_ONLINE', getUsersOnline(socket.room));
 
-            console.log(currentUser.name + "s'est déconnécté");
+            //console.log(currentUser.name + "s'est déconnécté");
 
+            /*
             if (!getUsersNames().includes(currentUser.name)) {
                 saveNewMessage({
                     author: 'ConnectionBot',
@@ -88,6 +99,8 @@ const Chat = (server) => {
                     minute: new Date().getMinutes()
                 });
             }
+
+             */
         };
 
         socket.on('USER_LEAVE', disconnectUser);

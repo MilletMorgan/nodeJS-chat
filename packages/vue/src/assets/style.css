@@ -20,7 +20,16 @@ label {
     padding: 2vh 2vh 2vh 2vh;
 }
 
+.header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .usersonline {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .margin-box {
@@ -62,7 +71,6 @@ label {
 }
 
 .chat {
-    background: #240b36;
 }
 
 /*
@@ -77,14 +85,14 @@ label {
 li.list-group-item.messages.bg-info.text-light.wow.animated.fadeInUp {
     border-radius: 5vh;
     margin: 1vh;
-    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.2);
     background-color: rgba(52,152,219,0.5) !important;
 }
 
 .messageBot {
     margin: 1vh 45% 1vh 1vh;
     padding: 2vh;
-    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.2);
     border-radius: 5vh 5vh 5vh 0;
     background-color: rgba(52,152,219,0.5) !important;
     color: #FFF;
@@ -92,7 +100,7 @@ li.list-group-item.messages.bg-info.text-light.wow.animated.fadeInUp {
 
 .messageUser {
     padding: 2vh;
-    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.2);
     background: #240b36;
     margin: 1vh 1vh 1vh 45%;
     border-radius: 5vh 5vh 0 5vh;
@@ -104,17 +112,12 @@ li.list-group-item.messages.bg-info.text-light.wow.animated.fadeInUp {
     border-radius: 5vh 5vh 5vh 0;
     margin: 1vh 45% 1vh 1vh;
     padding: 2vh;
-    -webkit-box-shadow: 0 1px 10px 1px rgba(0,0,0,.5);
-    box-shadow: 0 1px 10px 1px rgba(0,0,0,.5);
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.2);
     color: #FFF;
 }
 
 .content {
     overflow: hidden;
-    background: #c31432;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .data-target {
